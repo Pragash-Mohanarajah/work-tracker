@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { fetchStats } = require("../dev-metrics/fetchStats"); // Reusing your existing fetch logic
+const { fetchStats } = require("./fetchStats");
 const {
   buildWorkTrackerSection,
   generatePieChartSvg,
