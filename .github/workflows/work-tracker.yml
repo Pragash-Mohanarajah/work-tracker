@@ -7,15 +7,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     env:
       API_SECRET_TOKEN: ${{ secrets.API_SECRET_TOKEN }}
       STATS_URL: ${{ vars.STATS_URL }}
       SECTION_NAME: WORK_TRACKER
       COMMIT_MESSAGE: Generate Work Tracker Metrics
       SYMBOL_VERSION: 1
-
-    permissions:
-      contents: write
     
     steps:
       - name: Checkout Repository
