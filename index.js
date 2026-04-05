@@ -39,6 +39,19 @@ async function runTracker() {
       const commits = rawData.commits.byRepository[p.fullName] || 0;
       org.repos.push({ ...p, totalCommits: commits });
       org.totalCommits += commits;
+
+      // Aggregate languages for the organization
+      p.languages.forEach(lang => {
+        org.languages[lang.name] = (org.languages[lang.name] || 0) + lang.bytes;
+      });
+    });
+
+    // Determine top languages for each organization
+    orgMap.forEach(org => {
+      org.topLanguages = Object.entries(org.languages)
+        .sort(([, bytesA], [, bytesB]) => bytesB - bytesA)
+        .slice(0, 3)
+        .map(([name]) => name);
     });
 
     const data = {
@@ -86,8 +99,7 @@ async function runTracker() {
     fs.writeFileSync(path.resolve(process.cwd(), "tech-radar.svg"), radarSvg);
 
     // 1.2 Generate Punch Card
-    // We'll create a dummy matrix if real data is flat, or use data.analysis.punchCard if available
-    const punchCardMatrix = data?.analysis?.punchCard || Array(7).fill(0).map(() => Array(24).fill(0));
+    const punchCardMatrix = data?.analysis?.byDayHour || Array(7).fill(0).map(() => Array(24).fill(0));
     const punchCardSvg = generatePunchCardSvg(punchCardMatrix);
     fs.writeFileSync(path.resolve(process.cwd(), "punch-card.svg"), punchCardSvg);
 

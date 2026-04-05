@@ -1,21 +1,14 @@
-const getStyles = () => `
-  <style>
-    .card-bg { fill: #ffffff; stroke: #d0d7de; }
-    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .accent { fill: #0969da; }
-    .accent-stroke { stroke: #0969da; }
-    .grid-line { stroke: #d0d7de; }
-    @media (prefers-color-scheme: dark) {
-      .card-bg { fill: #0d1117; stroke: #30363d; }
-      .text-main { fill: #f0f6fc; }
-      .text-sub { fill: #8b949e; }
-      .accent { fill: #58a6ff; }
-      .accent-stroke { stroke: #58a6ff; }
-      .grid-line { stroke: #30363d; }
-    }
-  </style>
-`;
+// --- Universal Dark Mode Colors (readable on light backgrounds too) ---
+const CARD_BG = "#0d1117";
+const CARD_BORDER = "#30363d";
+const TEXT_MAIN = "#f0f6fc";
+const TEXT_SUB = "#8b949e";
+const ACCENT_PRIMARY = "#58a6ff"; // Blue
+const ACCENT_SECONDARY = "#3fb950"; // Green
+const ACCENT_ORANGE = "#f0883e"; // Orange
+const ACCENT_PURPLE = "#bc8cff"; // Purple
+const ACCENT_RED = "#ff7b72"; // Red
+const GRID_LINE = "#30363d";
 
 /**
  * Generates a modern Donut Chart for better legibility
@@ -30,7 +23,7 @@ function generatePieChartSvg(data, title) {
 
   const total = data.reduce((sum, item) => sum + item.value, 0);
   let currentAngle = 0;
-  const colors = ["#58a6ff", "#3fb950", "#f0883e", "#bc8cff", "#ff7b72"];
+  const colors = [ACCENT_PRIMARY, ACCENT_SECONDARY, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, "#6e7681"];
 
   const paths = data.map((item, i) => {
     const sliceAngle = (item.value / total) * 2 * Math.PI;
@@ -48,22 +41,21 @@ function generatePieChartSvg(data, title) {
     const largeArcFlag = sliceAngle > Math.PI ? 1 : 0;
     const pathData = `M ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} L ${ix1} ${iy1} A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${ix2} ${iy2} Z`;
     
-    return `<path d="${pathData}" fill="${colors[i % colors.length]}" class="card-bg" stroke-width="2" />`;
+    return `<path d="${pathData}" fill="${colors[i % colors.length]}" stroke="${CARD_BG}" stroke-width="2" />`;
   });
 
   const legend = data.map((item, i) => {
     const y = 60 + i * 22;
     return `
       <rect x="260" y="${y}" width="12" height="12" fill="${colors[i % colors.length]}" rx="3" />
-      <text x="280" y="${y + 10}" class="text-sub" font-size="12">${item.label}</text>
+      <text x="280" y="${y + 10}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial" font-size="12">${item.label}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="35" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">${title}</text>
       ${paths.join("")}
       ${legend.join("")}
     </svg>
@@ -82,9 +74,8 @@ function generateBranchActivitySvg(branches) {
   if (!branches || branches.length === 0) {
     return `
       <svg width="${width}" height="80" xmlns="http://www.w3.org/2000/svg">
-        ${getStyles()}
-        <rect width="100%" height="100%" class="card-bg" rx="10" />
-        <text x="50%" y="50%" text-anchor="middle" class="text-sub" font-size="12">Branch commit breakdown not available for this project</text>
+        <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+        <text x="50%" y="50%" text-anchor="middle" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12">Branch commit breakdown not available for this project</text>
       </svg>
     `;
   }
@@ -93,19 +84,18 @@ function generateBranchActivitySvg(branches) {
 
   const rows = branches.map((branch, i) => {
     const y = 50 + i * (barHeight + gap);
-    const barWidth = (branch.commits / maxCommits) * 550;
+    const barWidth = (branch.commits / maxCommits) * (width - 170); // Adjust bar width dynamically
     return `
-      <text x="20" y="${y + 14}" class="text-sub" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
-      <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" class="accent" rx="4" />
-      <text x="${160 + barWidth}" y="${y + 14}" class="text-sub" font-size="11">${branch.commits} commits</text>
+      <text x="20" y="${y + 14}" fill="${TEXT_SUB}" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
+      <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" fill="${ACCENT_PRIMARY}" rx="4" />
+      <text x="${160 + barWidth}" y="${y + 14}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">${branch.commits} commits</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Branch Contribution</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="30" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Branch Contribution</text>
       ${rows.join("")}
     </svg>
   `;
@@ -138,23 +128,22 @@ function generateRadarChartSvg(data, title) {
       const y = center + r * Math.sin(i * angleStep - Math.PI / 2);
       return `${x},${y}`;
     }).join(" ");
-    return `<polygon points="${p}" fill="none" class="grid-line" stroke-width="1" />`;
+    return `<polygon points="${p}" fill="none" stroke="${GRID_LINE}" stroke-width="1" />`;
   });
 
   // Labels
   const labels = data.map((d, i) => {
     const x = center + (radius + 30) * Math.cos(i * angleStep - Math.PI / 2);
     const y = center + (radius + 15) * Math.sin(i * angleStep - Math.PI / 2);
-    return `<text x="${x}" y="${y}" text-anchor="middle" class="text-sub" font-size="11" font-weight="500">${d.label}</text>`;
+    return `<text x="${x}" y="${y}" text-anchor="middle" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" font-weight="500">${d.label}</text>`;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="35" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">${title}</text>
       ${webs.join("")}
-      <polygon points="${points}" fill="rgba(88, 166, 255, 0.25)" class="accent-stroke" stroke-width="2.5" />
+      <polygon points="${points}" fill="rgba(88, 166, 255, 0.25)" stroke="${ACCENT_PRIMARY}" stroke-width="2.5" />
       ${labels.join("")}
     </svg>
   `;
@@ -170,7 +159,7 @@ function generatePunchCardSvg(matrix) {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   
   const cellWidth = (width - padding * 3) / 24;
-  const cellHeight = (height - padding * 2) / 7;
+  const cellHeight = (height - padding * 2 - 20) / 7; // Adjusted for legend
 
   let max = 0;
   matrix.forEach(day => day.forEach(hour => { if (hour > max) max = hour; }));
@@ -181,17 +170,17 @@ function generatePunchCardSvg(matrix) {
       if (val === 0) return;
       const r = (val / max) * (Math.min(cellWidth, cellHeight) / 2);
       const cx = padding + h * cellWidth + cellWidth / 2;
-      const cy = padding + d * cellHeight + cellHeight / 2;
-      circles.push(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="#7bc96f" opacity="0.8" />`);
+      const cy = padding + d * cellHeight + cellHeight / 2 + 10; // Shifted down for better alignment
+      circles.push(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${ACCENT_SECONDARY}" opacity="0.8" />`);
     });
   });
 
   const dayLabels = days.map((day, i) => 
-    `<text x="${padding - 10}" y="${padding + i * cellHeight + cellHeight / 2 + 4}" text-anchor="end" class="text-sub" font-size="9">${day}</text>`
+    `<text x="${padding - 10}" y="${padding + i * cellHeight + cellHeight / 2 + 14}" text-anchor="end" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9">${day}</text>`
   );
 
   const hourLabels = [0, 6, 12, 18, 23].map(h => 
-    `<text x="${padding + h * cellWidth + cellWidth / 2}" y="${height - padding + 15}" text-anchor="middle" class="text-sub" font-size="9">${h}h</text>`
+    `<text x="${padding + h * cellWidth + cellWidth / 2}" y="${height - padding + 25}" text-anchor="middle" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9">${h}h</text>`
   );
 
   // Legend
@@ -201,20 +190,19 @@ function generatePunchCardSvg(matrix) {
     const r = f * (Math.min(cellWidth, cellHeight) / 2);
     const x = legendX + i * 40;
     return `
-      <circle cx="${x}" cy="${legendY}" r="${r}" fill="#7bc96f" opacity="0.8" />
-      <text x="${x + 12}" y="${legendY + 4}" class="text-sub" font-size="9">${Math.round(f * max)}</text>
+      <circle cx="${x}" cy="${legendY}" r="${r}" fill="${ACCENT_SECONDARY}" opacity="0.8" />
+      <text x="${x + 12}" y="${legendY + 4}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9">${Math.round(f * max)}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Workday Rhythm (Punch Card)</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="30" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Workday Rhythm (Punch Card)</text>
       ${dayLabels.join("")}
       ${hourLabels.join("")}
       ${circles.join("")}
-      <text x="${legendX - 50}" y="${legendY + 4}" class="text-sub" font-size="9">Commits:</text>
+      <text x="${legendX - 50}" y="${legendY + 4}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9">Commits:</text>
       ${legendItems.join("")}
     </svg>
   `;
@@ -233,17 +221,16 @@ function generateTopContributorsSvg(contributors, title = "Top Contributors") {
     const y = 40 + i * rowHeight;
     const barWidth = (c.commits / maxCommits) * 200;
     return `
-      <text x="10" y="${y + 20}" class="text-main" font-size="12" font-weight="500">${c.name}</text>
-      <rect x="120" y="${y + 8}" width="${barWidth}" height="15" fill="#239a3b" rx="2" />
-      <text x="${125 + barWidth}" y="${y + 20}" class="text-sub" font-size="11">${c.commits} commits</text>
+      <text x="10" y="${y + 20}" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">${c.name}</text>
+      <rect x="120" y="${y + 8}" width="${barWidth}" height="15" fill="${ACCENT_SECONDARY}" rx="2" />
+      <text x="${125 + barWidth}" y="${y + 20}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">${c.commits} commits</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="10" y="25" class="text-main" font-size="14" font-weight="bold">${title}</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="10" y="25" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">${title}</text>
       ${rows.join("")}
     </svg>
   `;
@@ -253,7 +240,7 @@ function generateTopContributorsSvg(contributors, title = "Top Contributors") {
  * Efficiently showcases activity across many repositories using Sparklines
  */
 function generateOrgSparklinesSvg(repos, orgName) {
-  const width = 800;
+  const width = 800; // Full width
   const rowHeight = 30;
   const height = repos.length * rowHeight + 60;
 
@@ -264,26 +251,25 @@ function generateOrgSparklinesSvg(repos, orgName) {
     
     // Generate sparkline path
     const points = activity.map((val, j) => {
-      const px = 550 + (j * (150 / 11));
+      const px = width - 250 + (j * (150 / 11)); // Adjusted x for sparkline
       const py = y + 20 - (val / maxAct) * 15;
       return `${px},${py}`;
     }).join(" ");
 
     return `
-      <text x="10" y="${y + 15}" class="text-main" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
-      <polyline points="${points}" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="${y + 15}" class="text-sub" font-size="9" text-anchor="end">${repo.totalCommits}</text>
+      <text x="10" y="${y + 15}" fill="${TEXT_MAIN}" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
+      <polyline points="${points}" fill="none" stroke="${ACCENT_PRIMARY}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="${width - 20}" y="${y + 15}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">${repo.totalCommits}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="6" />
-      <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">${orgName} Repository Pulse</text>
-      <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
-      <text x="550" y="42" class="text-sub" font-size="10">12 Month Activity</text>
-      <text x="780" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="6" />
+      <text x="15" y="25" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">${orgName} Repository Pulse</text>
+      <text x="15" y="42" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Repository Name</text>
+      <text x="${width - 250}" y="42" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">12 Month Activity</text>
+      <text x="${width - 20}" y="42" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="end">Total</text>
       ${rows.join("")}
     </svg>
   `;
@@ -293,10 +279,10 @@ function generateOrgSparklinesSvg(repos, orgName) {
  * Generates a thin horizontal language distribution bar (GitHub style)
  */
 function generateLanguageBarSvg(languages, title) {
-  const width = 800;
+  const width = 800; // Full width
   const height = 100;
   const barHeight = 12;
-  const colors = ["#58a6ff", "#3fb950", "#f0883e", "#bc8cff", "#ff7b72", "#6e7681"];
+  const colors = [ACCENT_PRIMARY, ACCENT_SECONDARY, ACCENT_ORANGE, ACCENT_PURPLE, ACCENT_RED, "#6e7681"];
   
   const total = Object.values(languages).reduce((a, b) => a + b, 0);
   const sorted = Object.entries(languages).sort((a, b) => b[1] - a[1]).slice(0, 6);
@@ -315,15 +301,14 @@ function generateLanguageBarSvg(languages, title) {
     const pct = ((value / total) * 100).toFixed(1);
     return `
       <circle cx="${20 + (i * 80)}" cy="80" r="4" fill="${colors[i % colors.length]}" />
-      <text x="${30 + (i * 80)}" y="83" class="text-sub" font-size="10">${name} ${pct}%</text>
+      <text x="${30 + (i * 80)}" y="83" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">${name} ${pct}%</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">${title}</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="30" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">${title}</text>
       ${segments.join("")}
       ${legend.join("")}
     </svg>
@@ -418,7 +403,7 @@ function generateCategoryDonutSvg(categories, title) {
  * Generates a Summary Card for landing pages
  */
 function generateSummaryCardSvg(stats) {
-  const width = 800;
+  const width = 800; // Full width
   const height = 120;
   
   const items = [
@@ -431,17 +416,16 @@ function generateSummaryCardSvg(stats) {
   const columns = items.map((item, i) => {
     const x = 30 + (i * 195);
     return `
-      <text x="${x}" y="65" class="text-sub" font-size="10" text-anchor="start">${item.label}</text>
-      <text x="${x}" y="85" class="text-main" font-size="18" font-weight="800" text-anchor="start">${item.value}</text>
+      <text x="${x}" y="65" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="start">${item.label}</text>
+      <text x="${x}" y="85" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="800" text-anchor="start">${item.value}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="12" />
-      <text x="20" y="30" class="text-main" font-size="14" font-weight="bold">Pragash's Developer Snapshot</text>
-      <line x1="20" y1="45" x2="780" y2="45" class="grid-line" stroke-dasharray="2,2" />
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="12" />
+      <text x="20" y="30" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">Pragash's Developer Snapshot</text>
+      <line x1="20" y1="45" x2="780" y2="45" stroke="${GRID_LINE}" stroke-dasharray="2,2" />
       ${columns.join("")}
     </svg>
   `;
@@ -451,24 +435,23 @@ function generateSummaryCardSvg(stats) {
  * Generates a Milestone Card
  */
 function generateMilestonesSvg(milestones) {
-  const width = 395;
-  const height = 180;
+  const width = 395; // Half width
+  const height = Math.max(milestones.length * 22 + 60, 180); // Dynamic height, min 180
   
   const rows = milestones.map((m, i) => {
     const y = 60 + (i * 22);
     return `
-      <circle cx="30" cy="${y - 4}" r="3" class="accent" />
-      <text x="45" y="${y}" class="text-main" font-size="12" font-weight="500">${m.repo.split('/').pop()}</text>
-      <text x="375" y="${y}" class="text-sub" font-size="11" text-anchor="end">${m.level}+ commits</text>
+      <circle cx="30" cy="${y - 4}" r="3" fill="${ACCENT_PRIMARY}" />
+      <text x="45" y="${y}" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">${m.repo.split('/').pop()}</text>
+      <text x="${width - 20}" y="${y}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">${m.level}+ commits</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="12" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">🏆 Recent Milestones</text>
-      <text x="20" y="45" class="text-sub" font-size="11">Top repositories by contribution volume</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="12" />
+      <text x="20" y="30" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">🏆 Recent Milestones</text>
+      <text x="20" y="45" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">Top repositories by contribution volume</text>
       ${rows.join("")}
     </svg>
   `;
