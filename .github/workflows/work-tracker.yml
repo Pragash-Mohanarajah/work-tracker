@@ -6,6 +6,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      API_SECRET_TOKEN: ${{ secrets.API_SECRET_TOKEN }}
+      STATS_URL: ${{ vars.STATS_URL }}
+      SECTION_NAME: WORK_TRACKER
+      COMMIT_MESSAGE: Generate Work Tracker Metrics
+      SYMBOL_VERSION: 1
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -18,13 +26,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm install
-
       - name: Generate Work Tracker
-        env:
-          STATS_URL: ${{ secrets.STATS_URL }}
-          API_SECRET_TOKEN: ${{ secrets.API_SECRET_TOKEN }}
         run: node index.js
 
       - name: Commit and Push Changes
@@ -32,5 +34,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "docs: update work tracker statistics [skip ci]" || echo "No changes to commit"
+          git commit -m $COMMIT_MESSAGE || echo "No changes to commit"
           git push
