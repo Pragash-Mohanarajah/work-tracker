@@ -30,12 +30,16 @@ function buildWorkTrackerSection(data) {
   markdown.push("---");
 
   organizations.forEach(org => {
+    const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
     markdown.push(`#### 🏛️ ${org.name}`);
     markdown.push(`- **Total Repositories:** ${org.repos.length}`);
     markdown.push(`- **Primary Stack:** ${org.topLanguages.join(", ")}`);
     markdown.push("");
-    markdown.push(`### 📈 ${org.name} Pulse`);
-    markdown.push(`!Pulse for ${org.name}`);
+    
+    markdown.push(`<p align="center">`);
+    markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="400" />`);
+    markdown.push(`  <img src="./radar-${orgSlug}.svg" width="300" />`);
+    markdown.push(`</p>`);
     markdown.push("");
     
     org.repos.slice(0, 3).forEach(repo => {

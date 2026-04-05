@@ -36,11 +36,22 @@ async function runTracker() {
 
     // 2. Generate Branch Charts for each Repo
     data.organizations.forEach(org => {
-      // 2.1 Generate Organization Pulse (Sparklines)
+      const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
+      
+      // 2.1 Generate Org-Specific Pulse
       const pulseSvg = generateOrgSparklinesSvg(org.repos, org.name);
-      const pulseFile = `pulse-${org.name.toLowerCase().replace(/\s/g, '-')}.svg`;
-      fs.writeFileSync(path.resolve(process.cwd(), pulseFile), pulseSvg);
+      fs.writeFileSync(path.resolve(process.cwd(), `pulse-${orgSlug}.svg`), pulseSvg);
 
+      // 2.2 Generate Org-Specific Tech Radar
+      const orgLangData = Object.entries(org.languages || {})
+        .sort((a, b) => b[1] - a[1]).slice(0, 6)
+        .map(([label, value]) => ({ label, value }));
+      if (orgLangData.length > 2) {
+        const orgRadar = generateRadarChartSvg(orgLangData, `${org.name} Stack`);
+        fs.writeFileSync(path.resolve(process.cwd(), `radar-${orgSlug}.svg`), orgRadar);
+      }
+
+      // 2.3 Generate Repo Specific Branch Charts
       org.repos.slice(0, 3).forEach(repo => {
         const branchSvg = generateBranchActivitySvg(repo.branches || []);
         const fileName = `branch-${org.name}-${repo.name}.svg`;
