@@ -4,32 +4,37 @@ function buildWorkTrackerSection(data) {
   let markdown = [
     "## 🏢 Work & Organizational Tracker",
     '<p align="center">',
-    '  <img src="./summary-card.svg" width="100%" />',
+    '  <img src="./summary-card.svg" width="800" />',
     '</p>',
     "Detailed breakdown of contributions across professional and personal entities.",
     "",
     "### 📊 High-Level Metrics",
     '<p align="center">',
-    '  <img src="./contribution-growth.svg" width="450" />',
-    '  <img src="./org-distribution.svg" width="350" />',
+    '  <img src="./contribution-growth.svg" width="800" />',
+    '</p>',
+    '<p align="center">',
+    '  <img src="./org-distribution.svg" width="395" />',
+    '  <img src="./category-distribution.svg" width="395" />',
     '</p>',
     "",
     "### 🕸️ Expertise & Milestones",
     '<p align="center">',
-    '  <img src="./tech-radar.svg" width="400" />',
-    '  <img src="./milestones.svg" width="450" />',
+    '  <img src="./tech-radar.svg" width="395" />',
+    '  <img src="./milestones.svg" width="395" />',
     '</p>',
-    '<p align="center"><img src="./category-distribution.svg" width="400" /></p>',
     "",
     "### ⏰ Working Rhythm",
     '<p align="center">',
-    '  <img src="./punch-card.svg" width="450" />',
-    '  <img src="./weekly-activity.svg" width="350" />',
+    '  <img src="./punch-card.svg" width="800" />',
+    '</p>',
+    '<p align="center">',
+    '  <img src="./weekly-activity.svg" width="395" />',
     '</p>',
     ""
   ];
   if (data.teamProject) {
-    markdown.push("### 🤝 Team Collaboration", "!Top Contributors", "");
+    markdown.push("### 🤝 Team Collaboration");
+    markdown.push('<p align="center"><img src="./top-contributors.svg" width="395" /></p>', "");
   }
   
   markdown.push("---");
@@ -43,8 +48,10 @@ function buildWorkTrackerSection(data) {
 
     markdown.push(`<img src="./lang-bar-${orgSlug}.svg" width="800" />`);
     markdown.push(`<p align="center">`);
-    markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="450" />`);
-    markdown.push(`  <img src="./radar-${orgSlug}.svg" width="350" />`);
+    markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="800" />`);
+    markdown.push(`</p>`);
+    markdown.push(`<p align="center">`);
+    markdown.push(`  <img src="./radar-${orgSlug}.svg" width="395" />`);
     markdown.push(`</p>`);
     markdown.push("");
     
@@ -52,7 +59,7 @@ function buildWorkTrackerSection(data) {
       markdown.push(`##### 📦 ${repo.name}`);
       markdown.push(`> ${repo.description || "No description provided."}`);
       const branchFileName = `branch-${org.name}-${repo.name}.svg`;
-      markdown.push(`<img src="./${branchFileName}" width="500" />`);
+      markdown.push(`<p align="center"><img src="./${branchFileName}" width="800" /></p>`);
       markdown.push("");
     });
     

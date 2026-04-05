@@ -21,8 +21,8 @@ const getStyles = () => `
  * Generates a modern Donut Chart for better legibility
  */
 function generatePieChartSvg(data, title) {
-  const width = 440;
-  const height = 240;
+  const width = 395;
+  const height = 260;
   const radius = 80;
   const innerRadius = 50; // Donut hole
   const centerX = 120;
@@ -74,7 +74,7 @@ function generatePieChartSvg(data, title) {
  * Generates a stacked activity bar for branches
  */
 function generateBranchActivitySvg(branches) {
-  const width = 540;
+  const width = 800;
   const barHeight = 20;
   const gap = 12;
   const height = Math.max(branches.length * (barHeight + gap) + 60, 100);
@@ -93,7 +93,7 @@ function generateBranchActivitySvg(branches) {
 
   const rows = branches.map((branch, i) => {
     const y = 50 + i * (barHeight + gap);
-    const barWidth = (branch.commits / maxCommits) * 350;
+    const barWidth = (branch.commits / maxCommits) * 550;
     return `
       <text x="20" y="${y + 14}" class="text-sub" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
       <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" class="accent" rx="4" />
@@ -115,8 +115,9 @@ function generateBranchActivitySvg(branches) {
  * Generates a Radar (Spider) Chart for Tech Stack Expertise
  */
 function generateRadarChartSvg(data, title) {
-  const size = 340;
-  const center = size / 2;
+  const width = 395;
+  const height = 340;
+  const center = width / 2;
   const radius = 90;
   const angleStep = (Math.PI * 2) / data.length;
 
@@ -148,7 +149,7 @@ function generateRadarChartSvg(data, title) {
   });
 
   return `
-    <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       ${getStyles()}
       <rect width="100%" height="100%" class="card-bg" rx="10" />
       <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
@@ -163,12 +164,12 @@ function generateRadarChartSvg(data, title) {
  * Generates a Punch Card (Hour vs Day)
  */
 function generatePunchCardSvg(matrix) {
-  const width = 600;
-  const height = 240;
+  const width = 800;
+  const height = 280;
   const padding = 40;
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   
-  const cellWidth = (width - padding * 2) / 24;
+  const cellWidth = (width - padding * 3) / 24;
   const cellHeight = (height - padding * 2) / 7;
 
   let max = 0;
@@ -223,7 +224,7 @@ function generatePunchCardSvg(matrix) {
  * Generates a chart for Top Contributors in a team setting
  */
 function generateTopContributorsSvg(contributors, title = "Top Contributors") {
-  const width = 400;
+  const width = 395;
   const rowHeight = 35;
   const height = contributors.length * rowHeight + 50;
   const maxCommits = Math.max(...contributors.map(c => c.commits), 1);
@@ -252,7 +253,7 @@ function generateTopContributorsSvg(contributors, title = "Top Contributors") {
  * Efficiently showcases activity across many repositories using Sparklines
  */
 function generateOrgSparklinesSvg(repos, orgName) {
-  const width = 540;
+  const width = 800;
   const rowHeight = 30;
   const height = repos.length * rowHeight + 60;
 
@@ -263,7 +264,7 @@ function generateOrgSparklinesSvg(repos, orgName) {
     
     // Generate sparkline path
     const points = activity.map((val, j) => {
-      const px = 350 + (j * (150 / 11));
+      const px = 550 + (j * (150 / 11));
       const py = y + 20 - (val / maxAct) * 15;
       return `${px},${py}`;
     }).join(" ");
@@ -271,7 +272,7 @@ function generateOrgSparklinesSvg(repos, orgName) {
     return `
       <text x="10" y="${y + 15}" class="text-main" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
       <polyline points="${points}" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="510" y="${y + 15}" class="text-sub" font-size="9" text-anchor="end">${repo.totalCommits}</text>
+      <text x="780" y="${y + 15}" class="text-sub" font-size="9" text-anchor="end">${repo.totalCommits}</text>
     `;
   });
 
@@ -281,8 +282,8 @@ function generateOrgSparklinesSvg(repos, orgName) {
       <rect width="100%" height="100%" class="card-bg" rx="6" />
       <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">${orgName} Repository Pulse</text>
       <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
-      <text x="350" y="42" class="text-sub" font-size="10">12 Month Activity</text>
-      <text x="510" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
+      <text x="550" y="42" class="text-sub" font-size="10">12 Month Activity</text>
+      <text x="780" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
       ${rows.join("")}
     </svg>
   `;
@@ -292,7 +293,7 @@ function generateOrgSparklinesSvg(repos, orgName) {
  * Generates a thin horizontal language distribution bar (GitHub style)
  */
 function generateLanguageBarSvg(languages, title) {
-  const width = 500;
+  const width = 800;
   const height = 100;
   const barHeight = 12;
   const colors = ["#58a6ff", "#3fb950", "#f0883e", "#bc8cff", "#ff7b72", "#6e7681"];
@@ -333,8 +334,8 @@ function generateLanguageBarSvg(languages, title) {
  * Generates a simple bar chart for weekly activity
  */
 function generateWeeklyActivitySvg(daysData, title) {
-  const width = 440;
-  const height = 200;
+  const width = 395;
+  const height = 280;
   const barWidth = 35;
   const gap = 15;
   const padding = 50;
@@ -367,8 +368,8 @@ function generateWeeklyActivitySvg(daysData, title) {
  * Generates a Line Chart for cumulative contribution growth
  */
 function generateContributionLineSvg(history, title) {
-  const width = 500;
-  const height = 200;
+  const width = 800;
+  const height = 260;
   const padding = 40;
   
   if (!history || history.length < 2) return "";
@@ -417,7 +418,7 @@ function generateCategoryDonutSvg(categories, title) {
  * Generates a Summary Card for landing pages
  */
 function generateSummaryCardSvg(stats) {
-  const width = 450;
+  const width = 800;
   const height = 120;
   
   const items = [
@@ -428,7 +429,7 @@ function generateSummaryCardSvg(stats) {
   ];
 
   const columns = items.map((item, i) => {
-    const x = 30 + (i * 105);
+    const x = 30 + (i * 195);
     return `
       <text x="${x}" y="65" class="text-sub" font-size="10" text-anchor="start">${item.label}</text>
       <text x="${x}" y="85" class="text-main" font-size="18" font-weight="800" text-anchor="start">${item.value}</text>
@@ -440,7 +441,7 @@ function generateSummaryCardSvg(stats) {
       ${getStyles()}
       <rect width="100%" height="100%" class="card-bg" rx="12" />
       <text x="20" y="30" class="text-main" font-size="14" font-weight="bold">Pragash's Developer Snapshot</text>
-      <line x1="20" y1="45" x2="430" y2="45" class="grid-line" stroke-dasharray="2,2" />
+      <line x1="20" y1="45" x2="780" y2="45" class="grid-line" stroke-dasharray="2,2" />
       ${columns.join("")}
     </svg>
   `;
@@ -450,7 +451,7 @@ function generateSummaryCardSvg(stats) {
  * Generates a Milestone Card
  */
 function generateMilestonesSvg(milestones) {
-  const width = 450;
+  const width = 395;
   const height = 180;
   
   const rows = milestones.map((m, i) => {
@@ -458,7 +459,7 @@ function generateMilestonesSvg(milestones) {
     return `
       <circle cx="30" cy="${y - 4}" r="3" class="accent" />
       <text x="45" y="${y}" class="text-main" font-size="12" font-weight="500">${m.repo.split('/').pop()}</text>
-      <text x="420" y="${y}" class="text-sub" font-size="11" text-anchor="end">${m.level}+ commits</text>
+      <text x="375" y="${y}" class="text-sub" font-size="11" text-anchor="end">${m.level}+ commits</text>
     `;
   });
 
