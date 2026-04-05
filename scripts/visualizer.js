@@ -319,8 +319,8 @@ function generateLanguageBarSvg(languages, title) {
  * Generates a simple bar chart for weekly activity
  */
 function generateWeeklyActivitySvg(daysData, title) {
-  const width = 395;
-  const height = 280;
+  const width = 395; // Half width
+  const height = 280; // Adjusted height
   const barWidth = 35;
   const gap = 15;
   const padding = 50;
@@ -334,16 +334,15 @@ function generateWeeklyActivitySvg(daysData, title) {
     const x = 40 + i * (barWidth + gap);
     const y = height - 40 - h;
     return `
-      <rect x="${x}" y="${y}" width="${barWidth}" height="${h}" fill="#3fb950" rx="4" />
-      <text x="${x + barWidth / 2}" y="${height - 20}" text-anchor="middle" class="text-sub" font-size="11">${dayNames[i]}</text>
+      <rect x="${x}" y="${y}" width="${barWidth}" height="${h}" fill="${ACCENT_SECONDARY}" rx="4" />
+      <text x="${x + barWidth / 2}" y="${height - 20}" text-anchor="middle" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">${dayNames[i]}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="35" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">${title}</text>
       ${bars.join("")}
     </svg>
   `;
@@ -368,22 +367,21 @@ function generateContributionLineSvg(history, title) {
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      ${getStyles()}
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">${title}</text>
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+      <text x="20" y="30" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">${title}</text>
       
       <!-- Grid lines -->
-      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="grid-line" />
-      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" class="grid-line" />
+      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="${GRID_LINE}" />
+      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="${GRID_LINE}" />
       
       <!-- Area under line -->
       <polyline points="${padding},${height - padding} ${points} ${width - padding},${height - padding}" fill="rgba(56, 139, 253, 0.1)" />
       
       <!-- The Line -->
-      <polyline points="${points}" fill="none" class="accent-stroke" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      <polyline points="${points}" fill="none" stroke="${ACCENT_PRIMARY}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
       
-      <text x="${padding}" y="${height - 15}" class="text-sub" font-size="10">${history[0].date.split('-')[0]}</text>
-      <text x="${width - padding}" y="${height - 15}" text-anchor="end" class="text-sub" font-size="10">${history[history.length-1].date.split('-')[0]}</text>
+      <text x="${padding}" y="${height - 15}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">${history[0].date.split('-')[0]}</text>
+      <text x="${width - padding}" y="${height - 15}" text-anchor="end" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">${history[history.length-1].date.split('-')[0]}</text>
     </svg>
   `;
 }
