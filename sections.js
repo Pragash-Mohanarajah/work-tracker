@@ -1,27 +1,20 @@
-const { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg, generateLanguageBarSvg, generateWeeklyActivitySvg } = require("./visualizer");
-
 function buildWorkTrackerSection(data) {
   const organizations = data?.organizations || [];
-  
-  const orgDistribution = organizations.map(org => ({
-    label: org.name,
-    value: org.totalCommits || 0
-  }));
 
   let markdown = [
     "## 🏢 Work & Organizational Tracker",
     "Detailed breakdown of contributions across professional and personal entities.",
     "",
     "### 📊 Contribution by Organization",
-    "!Org Distribution",
+    '<p align="center"><img src="./org-distribution.svg" width="600" /></p>',
     "",
     "### 🕸️ Tech Stack Breadth",
-    "!Language Radar",
+    '<p align="center"><img src="./tech-radar.svg" width="400" /></p>',
     "",
     "### ⏰ Working Rhythm",
     '<p align="center">',
-    '  <img src="./punch-card.svg" width="400" />',
-    '  <img src="./weekly-activity.svg" width="300" />',
+    '  <img src="./punch-card.svg" width="450" />',
+    '  <img src="./weekly-activity.svg" width="350" />',
     '</p>',
     ""
   ];
@@ -37,20 +30,19 @@ function buildWorkTrackerSection(data) {
     markdown.push(`- **Total Repositories:** ${org.repos.length}`);
     markdown.push(`- **Primary Stack:** ${org.topLanguages.join(", ")}`);
     markdown.push("");
-    
-    markdown.push(`!${org.name} Language Mix`);
-    markdown.push(`<img src="./lang-bar-${orgSlug}.svg" width="100%" />`);
+
+    markdown.push(`<img src="./lang-bar-${orgSlug}.svg" width="800" />`);
     markdown.push(`<p align="center">`);
-    markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="400" />`);
-    markdown.push(`  <img src="./radar-${orgSlug}.svg" width="300" />`);
+    markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="450" />`);
+    markdown.push(`  <img src="./radar-${orgSlug}.svg" width="350" />`);
     markdown.push(`</p>`);
     markdown.push("");
     
     org.repos.slice(0, 3).forEach(repo => {
       markdown.push(`##### 📦 ${repo.name}`);
       markdown.push(`> ${repo.description || "No description provided."}`);
-      markdown.push("");
-      markdown.push(`!Branch Activity for ${repo.name}`);
+      const branchFileName = `branch-${org.name}-${repo.name}.svg`;
+      markdown.push(`<img src="./${branchFileName}" width="500" />`);
       markdown.push("");
     });
     

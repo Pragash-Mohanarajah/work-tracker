@@ -1,7 +1,17 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchStats } = require("../dev-metrics/fetchStats"); // Reusing your existing fetch logic
-const { buildWorkTrackerSection, generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg, generateLanguageBarSvg, generateWeeklyActivitySvg } = require("./visualizer");
+const {
+  buildWorkTrackerSection,
+  generatePieChartSvg,
+  generateBranchActivitySvg,
+  generateRadarChartSvg,
+  generatePunchCardSvg,
+  generateTopContributorsSvg,
+  generateOrgSparklinesSvg,
+  generateLanguageBarSvg,
+  generateWeeklyActivitySvg
+} = require("./visualizer");
 
 async function runTracker() {
   console.log("🚀 Starting Work Tracker synchronization...");
