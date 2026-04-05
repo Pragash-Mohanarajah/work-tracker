@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchStats } = require("../dev-metrics/fetchStats"); // Reusing your existing fetch logic
-const { buildWorkTrackerSection, generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg } = require("./sections");
+const { buildWorkTrackerSection, generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg, generateLanguageBarSvg, generateWeeklyActivitySvg } = require("./visualizer");
 
 async function runTracker() {
   console.log("🚀 Starting Work Tracker synchronization...");
@@ -28,6 +28,11 @@ async function runTracker() {
     const punchCardSvg = generatePunchCardSvg(punchCardMatrix);
     fs.writeFileSync(path.resolve(process.cwd(), "punch-card.svg"), punchCardSvg);
 
+    // 1.3 Generate Weekly Activity
+    const weeklyData = data?.analysis?.byDay || [0,0,0,0,0,0,0];
+    const weeklySvg = generateWeeklyActivitySvg(weeklyData, "Contribution Intensity (Weekly)");
+    fs.writeFileSync(path.resolve(process.cwd(), "weekly-activity.svg"), weeklySvg);
+
     // 1.3 Generate Team Contributors (if applicable)
     if (data.teamProject) {
       const teamSvg = generateTopContributorsSvg(data.teamProject.contributors);
@@ -41,6 +46,11 @@ async function runTracker() {
       // 2.1 Generate Org-Specific Pulse
       const pulseSvg = generateOrgSparklinesSvg(org.repos, org.name);
       fs.writeFileSync(path.resolve(process.cwd(), `pulse-${orgSlug}.svg`), pulseSvg);
+
+      // 2.1.1 Generate Org Language Bar
+      const orgLangs = org.languages || {};
+      const langBarSvg = generateLanguageBarSvg(orgLangs, `${org.name} Tech Mix`);
+      fs.writeFileSync(path.resolve(process.cwd(), `lang-bar-${orgSlug}.svg`), langBarSvg);
 
       // 2.2 Generate Org-Specific Tech Radar
       const orgLangData = Object.entries(org.languages || {})

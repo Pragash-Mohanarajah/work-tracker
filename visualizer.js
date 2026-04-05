@@ -175,11 +175,12 @@ function generatePunchCardSvg(matrix) {
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <text x="10" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#c9d1d9">Workday Rhythm (Punch Card)</text>
+      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
+      <text x="20" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">Workday Rhythm (Punch Card)</text>
       ${dayLabels.join("")}
       ${hourLabels.join("")}
       ${circles.join("")}
-      <text x="${legendX - 40}" y="${legendY + 4}" fill="#8b949e" font-family="sans-serif" font-size="9">Commits:</text>
+      <text x="${legendX - 50}" y="${legendY + 4}" fill="#8b949e" font-family="sans-serif" font-size="9">Commits:</text>
       ${legendItems.join("")}
     </svg>
   `;
@@ -251,7 +252,81 @@ function generateOrgSparklinesSvg(repos, orgName) {
   `;
 }
 
+/**
+ * Generates a thin horizontal language distribution bar (GitHub style)
+ */
+function generateLanguageBarSvg(languages, title) {
+  const width = 500;
+  const height = 100;
+  const barHeight = 12;
+  const colors = ["#58a6ff", "#3fb950", "#f0883e", "#bc8cff", "#ff7b72", "#6e7681"];
+  
+  const total = Object.values(languages).reduce((a, b) => a + b, 0);
+  const sorted = Object.entries(languages).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  
+  let xOffset = 20;
+  const barWidth = width - 40;
+  
+  const segments = sorted.map(([name, value], i) => {
+    const w = (value / total) * barWidth;
+    const rect = `<rect x="${xOffset}" y="50" width="${w}" height="${barHeight}" fill="${colors[i % colors.length]}" />`;
+    xOffset += w;
+    return rect;
+  });
+
+  const legend = sorted.map(([name, value], i) => {
+    const pct = ((value / total) * 100).toFixed(1);
+    return `
+      <circle cx="${20 + (i * 80)}" cy="80" r="4" fill="${colors[i % colors.length]}" />
+      <text x="${30 + (i * 80)}" y="83" fill="#8b949e" font-family="sans-serif" font-size="10">${name} ${pct}%</text>
+    `;
+  });
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
+      <text x="20" y="30" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      ${segments.join("")}
+      ${legend.join("")}
+    </svg>
+  `;
+}
+
+/**
+ * Generates a simple bar chart for weekly activity
+ */
+function generateWeeklyActivitySvg(daysData, title) {
+  const width = 440;
+  const height = 200;
+  const barWidth = 35;
+  const gap = 15;
+  const padding = 50;
+  const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  
+  const max = Math.max(...daysData, 1);
+  const chartHeight = height - padding * 2;
+
+  const bars = daysData.map((val, i) => {
+    const h = (val / max) * chartHeight;
+    const x = 40 + i * (barWidth + gap);
+    const y = height - 40 - h;
+    return `
+      <rect x="${x}" y="${y}" width="${barWidth}" height="${h}" fill="#3fb950" rx="4" />
+      <text x="${x + barWidth / 2}" y="${height - 20}" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="11">${dayNames[i]}</text>
+    `;
+  });
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
+      <text x="20" y="35" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      ${bars.join("")}
+    </svg>
+  `;
+}
+
 module.exports = { 
   generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, 
-  generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg 
+  generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg,
+  generateLanguageBarSvg, generateWeeklyActivitySvg
 };

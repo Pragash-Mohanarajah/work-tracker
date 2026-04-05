@@ -1,4 +1,4 @@
-const { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg } = require("./visualizer");
+const { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg, generateLanguageBarSvg, generateWeeklyActivitySvg } = require("./visualizer");
 
 function buildWorkTrackerSection(data) {
   const organizations = data?.organizations || [];
@@ -18,11 +18,13 @@ function buildWorkTrackerSection(data) {
     "### 🕸️ Tech Stack Breadth",
     "!Language Radar",
     "",
-    "### ⏰ Productivity Rhythm",
-    "!Punch Card",
+    "### ⏰ Working Rhythm",
+    '<p align="center">',
+    '  <img src="./punch-card.svg" width="400" />',
+    '  <img src="./weekly-activity.svg" width="300" />',
+    '</p>',
     ""
   ];
-
   if (data.teamProject) {
     markdown.push("### 🤝 Team Collaboration", "!Top Contributors", "");
   }
@@ -36,6 +38,8 @@ function buildWorkTrackerSection(data) {
     markdown.push(`- **Primary Stack:** ${org.topLanguages.join(", ")}`);
     markdown.push("");
     
+    markdown.push(`!${org.name} Language Mix`);
+    markdown.push(`<img src="./lang-bar-${orgSlug}.svg" width="100%" />`);
     markdown.push(`<p align="center">`);
     markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="400" />`);
     markdown.push(`  <img src="./radar-${orgSlug}.svg" width="300" />`);
@@ -56,4 +60,4 @@ function buildWorkTrackerSection(data) {
   return markdown.join("\n");
 }
 
-module.exports = { buildWorkTrackerSection, generatePieChartSvg, generateBranchActivitySvg };
+module.exports = { buildWorkTrackerSection };
