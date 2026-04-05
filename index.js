@@ -10,14 +10,41 @@ const {
   generateTopContributorsSvg,
   generateOrgSparklinesSvg,
   generateLanguageBarSvg,
-  generateWeeklyActivitySvg
+  generateWeeklyActivitySvg,
+  generateContributionLineSvg,
+  generateCategoryDonutSvg
 } = require("./visualizer");
 
 async function runTracker() {
   console.log("🚀 Starting Work Tracker synchronization...");
   
   try {
-    const data = await fetchStats(); // Assume this is expanded to return orgs/branches
+    const rawData = await fetchStats();
+
+    // Group repositories by Organization (Owner) for the tracker view
+    const orgMap = new Map();
+    rawData.repositories.projects.forEach(p => {
+      if (!orgMap.has(p.owner)) {
+        orgMap.set(p.owner, { 
+          name: p.owner, 
+          repos: [], 
+          totalCommits: 0, 
+          languages: {}, 
+          topLanguages: [] 
+        });
+      }
+      const org = orgMap.get(p.owner);
+      const commits = rawData.commits.byRepository[p.fullName] || 0;
+      org.repos.push({ ...p, totalCommits: commits });
+      org.totalCommits += commits;
+    });
+
+    const data = {
+      ...rawData,
+      organizations: Array.from(orgMap.values()).sort((a, b) => b.totalCommits - a.totalCommits)
+    };
+
+    // --- GENERATE GRAPHICS ---
     
     // 1. Generate Org Distribution Chart
     const orgData = data.organizations.map(o => ({ label: o.name, value: o.totalCommits }));
@@ -48,6 +75,14 @@ async function runTracker() {
       const teamSvg = generateTopContributorsSvg(data.teamProject.contributors);
       fs.writeFileSync(path.resolve(process.cwd(), "top-contributors.svg"), teamSvg);
     }
+
+    // 1.4 Generate Growth Chart
+    const growthSvg = generateContributionLineSvg(data.activity.commitHistory, "Lifetime Contribution Growth");
+    fs.writeFileSync(path.resolve(process.cwd(), "contribution-growth.svg"), growthSvg);
+
+    // 1.5 Generate Work Categories
+    const categorySvg = generateCategoryDonutSvg(data.analysis.byCategory, "Work by Domain");
+    fs.writeFileSync(path.resolve(process.cwd(), "category-distribution.svg"), categorySvg);
 
     // 2. Generate Branch Charts for each Repo
     data.organizations.forEach(org => {

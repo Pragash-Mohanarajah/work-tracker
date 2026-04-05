@@ -325,8 +325,58 @@ function generateWeeklyActivitySvg(daysData, title) {
   `;
 }
 
+/**
+ * Generates a Line Chart for cumulative contribution growth
+ */
+function generateContributionLineSvg(history, title) {
+  const width = 500;
+  const height = 200;
+  const padding = 40;
+  
+  if (!history || history.length < 2) return "";
+
+  const maxCommits = Math.max(...history.map(h => h.total), 1);
+  const points = history.map((h, i) => {
+    const x = padding + (i / (history.length - 1)) * (width - padding * 2);
+    const y = height - padding - (h.total / maxCommits) * (height - padding * 2);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
+      <text x="20" y="30" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      
+      <!-- Grid lines -->
+      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="#30363d" />
+      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="#30363d" />
+      
+      <!-- Area under line -->
+      <polyline points="${padding},${height - padding} ${points} ${width - padding},${height - padding}" fill="rgba(56, 139, 253, 0.1)" />
+      
+      <!-- The Line -->
+      <polyline points="${points}" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      
+      <text x="${padding}" y="${height - 15}" fill="#8b949e" font-family="sans-serif" font-size="10">${history[0].date.split('-')[0]}</text>
+      <text x="${width - padding}" y="${height - 15}" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="10">${history[history.length-1].date.split('-')[0]}</text>
+    </svg>
+  `;
+}
+
+/**
+ * Generates a legend-focused donut for Categories
+ */
+function generateCategoryDonutSvg(categories, title) {
+  const data = Object.entries(categories)
+    .sort((a, b) => b[1] - a[1])
+    .map(([label, value]) => ({ label, value }));
+    
+  return generatePieChartSvg(data, title);
+}
+
 module.exports = { 
   generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, 
   generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg,
-  generateLanguageBarSvg, generateWeeklyActivitySvg
+  generateLanguageBarSvg, generateWeeklyActivitySvg,
+  generateContributionLineSvg, generateCategoryDonutSvg
 };
