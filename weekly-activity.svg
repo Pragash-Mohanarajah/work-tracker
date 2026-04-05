@@ -1,5 +1,5 @@
 
-    <svg width="440" height="200" xmlns="http://www.w3.org/2000/svg">
+    <svg width="395" height="280" xmlns="http://www.w3.org/2000/svg">
       
   <style>
     .card-bg { fill: #ffffff; stroke: #d0d7de; }
@@ -21,26 +21,26 @@
       <rect width="100%" height="100%" class="card-bg" rx="10" />
       <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">Contribution Intensity (Weekly)</text>
       
-      <rect x="40" y="121.61825726141078" width="35" height="38.38174273858922" fill="#3fb950" rx="4" />
-      <text x="57.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Mon</text>
+      <rect x="40" y="170.53941908713693" width="35" height="69.46058091286308" fill="#3fb950" rx="4" />
+      <text x="57.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Mon</text>
     
-      <rect x="90" y="81.30013831258644" width="35" height="78.69986168741356" fill="#3fb950" rx="4" />
-      <text x="107.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Tue</text>
+      <rect x="90" y="98.34024896265561" width="35" height="141.6597510373444" fill="#3fb950" rx="4" />
+      <text x="107.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Tue</text>
     
-      <rect x="140" y="60" width="35" height="100" fill="#3fb950" rx="4" />
-      <text x="157.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Wed</text>
+      <rect x="140" y="60" width="35" height="180" fill="#3fb950" rx="4" />
+      <text x="157.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Wed</text>
     
-      <rect x="190" y="63.80359612724757" width="35" height="96.19640387275243" fill="#3fb950" rx="4" />
-      <text x="207.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Thu</text>
+      <rect x="190" y="66.84647302904563" width="35" height="173.15352697095437" fill="#3fb950" rx="4" />
+      <text x="207.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Thu</text>
     
-      <rect x="240" y="79.36376210235132" width="35" height="80.63623789764868" fill="#3fb950" rx="4" />
-      <text x="257.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Fri</text>
+      <rect x="240" y="94.85477178423236" width="35" height="145.14522821576764" fill="#3fb950" rx="4" />
+      <text x="257.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Fri</text>
     
-      <rect x="290" y="74.73029045643153" width="35" height="85.26970954356847" fill="#3fb950" rx="4" />
-      <text x="307.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Sat</text>
+      <rect x="290" y="86.51452282157678" width="35" height="153.48547717842322" fill="#3fb950" rx="4" />
+      <text x="307.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Sat</text>
     
-      <rect x="340" y="129.15629322268327" width="35" height="30.843706777316736" fill="#3fb950" rx="4" />
-      <text x="357.5" y="180" text-anchor="middle" class="text-sub" font-size="11">Sun</text>
+      <rect x="340" y="184.4813278008299" width="35" height="55.518672199170126" fill="#3fb950" rx="4" />
+      <text x="357.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Sun</text>
     
     </svg>
   

@@ -19,14 +19,14 @@
   </style>
 
       <rect width="100%" height="100%" class="card-bg" rx="6" />
-      <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">supabase Repository Pulse</text>
+      <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">TAEC-IT Repository Pulse</text>
       <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
       <text x="550" y="42" class="text-sub" font-size="10">12 Month Activity</text>
       <text x="780" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
       
-      <text x="10" y="65" class="text-main" font-family="monospace" font-size="11">supabase</text>
+      <text x="10" y="65" class="text-main" font-family="monospace" font-size="11">taec-uk-landing</text>
       <polyline points="550,70 563.6363636363636,70 577.2727272727273,70 590.9090909090909,70 604.5454545454545,70 618.1818181818182,70 631.8181818181818,70 645.4545454545455,70 659.0909090909091,70 672.7272727272727,70 686.3636363636364,70 700,70" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="65" class="text-sub" font-size="9" text-anchor="end">0</text>
+      <text x="780" y="65" class="text-sub" font-size="9" text-anchor="end">28</text>
     
     </svg>
   

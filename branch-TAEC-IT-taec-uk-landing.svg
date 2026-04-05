@@ -23,11 +23,11 @@
       
       <text x="20" y="64" class="text-sub" font-family="monospace" font-size="12">main</text>
       <rect x="150" y="50" width="550" height="20" class="accent" rx="4" />
-      <text x="710" y="64" class="text-sub" font-size="11">105 commits</text>
+      <text x="710" y="64" class="text-sub" font-size="11">36 commits</text>
     
       <text x="20" y="96" class="text-sub" font-family="monospace" font-size="12">develop</text>
-      <rect x="150" y="82" width="508.09523809523813" height="20" class="accent" rx="4" />
-      <text x="668.0952380952381" y="96" class="text-sub" font-size="11">97 commits</text>
+      <rect x="150" y="82" width="504.16666666666663" height="20" class="accent" rx="4" />
+      <text x="664.1666666666666" y="96" class="text-sub" font-size="11">33 commits</text>
     
     </svg>
   

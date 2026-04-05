@@ -1,5 +1,5 @@
 
-    <svg width="540" height="380" xmlns="http://www.w3.org/2000/svg">
+    <svg width="800" height="380" xmlns="http://www.w3.org/2000/svg">
       
   <style>
     .card-bg { fill: #ffffff; stroke: #d0d7de; }
@@ -21,45 +21,45 @@
       <rect width="100%" height="100%" class="card-bg" rx="10" />
       <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Branch Contribution</text>
       
-      <text x="20" y="64" class="text-sub" font-family="monospace" font-size="12">add-clerk-auth</text>
-      <rect x="150" y="50" width="2.770448548812665" height="20" class="accent" rx="4" />
-      <text x="162.77044854881265" y="64" class="text-sub" font-size="11">3 commits</text>
+      <text x="20" y="64" class="text-sub" font-family="monospace" font-size="12">replit-agent</text>
+      <rect x="150" y="50" width="181.41361256544502" height="20" class="accent" rx="4" />
+      <text x="341.413612565445" y="64" class="text-sub" font-size="11">126 commits</text>
     
-      <text x="20" y="96" class="text-sub" font-family="monospace" font-size="12">add-next-auth</text>
-      <rect x="150" y="82" width="2.770448548812665" height="20" class="accent" rx="4" />
-      <text x="162.77044854881265" y="96" class="text-sub" font-size="11">3 commits</text>
+      <text x="20" y="96" class="text-sub" font-family="monospace" font-size="12">production</text>
+      <rect x="150" y="82" width="550" height="20" class="accent" rx="4" />
+      <text x="710" y="96" class="text-sub" font-size="11">382 commits</text>
     
-      <text x="20" y="128" class="text-sub" font-family="monospace" font-size="12">ai-chatbot-atte</text>
-      <rect x="150" y="114" width="4.617414248021109" height="20" class="accent" rx="4" />
-      <text x="164.6174142480211" y="128" class="text-sub" font-size="11">5 commits</text>
+      <text x="20" y="128" class="text-sub" font-family="monospace" font-size="12">nextjs-ai-chatb</text>
+      <rect x="150" y="114" width="4.319371727748691" height="20" class="accent" rx="4" />
+      <text x="164.3193717277487" y="128" class="text-sub" font-size="11">3 commits</text>
     
-      <text x="20" y="160" class="text-sub" font-family="monospace" font-size="12">dev</text>
-      <rect x="150" y="146" width="21.240105540897098" height="20" class="accent" rx="4" />
-      <text x="181.2401055408971" y="160" class="text-sub" font-size="11">23 commits</text>
+      <text x="20" y="160" class="text-sub" font-family="monospace" font-size="12">main</text>
+      <rect x="150" y="146" width="44.633507853403145" height="20" class="accent" rx="4" />
+      <text x="204.63350785340316" y="160" class="text-sub" font-size="11">31 commits</text>
     
-      <text x="20" y="192" class="text-sub" font-family="monospace" font-size="12">dev-optimised</text>
-      <rect x="150" y="178" width="72.03166226912928" height="20" class="accent" rx="4" />
-      <text x="232.0316622691293" y="192" class="text-sub" font-size="11">78 commits</text>
+      <text x="20" y="192" class="text-sub" font-family="monospace" font-size="12">gemini</text>
+      <rect x="150" y="178" width="179.9738219895288" height="20" class="accent" rx="4" />
+      <text x="339.9738219895288" y="192" class="text-sub" font-size="11">125 commits</text>
     
       <text x="20" y="224" class="text-sub" font-family="monospace" font-size="12">development</text>
-      <rect x="150" y="210" width="71.10817941952507" height="20" class="accent" rx="4" />
-      <text x="231.10817941952507" y="224" class="text-sub" font-size="11">77 commits</text>
+      <rect x="150" y="210" width="110.86387434554973" height="20" class="accent" rx="4" />
+      <text x="270.86387434554973" y="224" class="text-sub" font-size="11">77 commits</text>
     
-      <text x="20" y="256" class="text-sub" font-family="monospace" font-size="12">gemini</text>
-      <rect x="150" y="242" width="115.4353562005277" height="20" class="accent" rx="4" />
-      <text x="275.43535620052774" y="256" class="text-sub" font-size="11">125 commits</text>
+      <text x="20" y="256" class="text-sub" font-family="monospace" font-size="12">dev-optimised</text>
+      <rect x="150" y="242" width="112.30366492146597" height="20" class="accent" rx="4" />
+      <text x="272.30366492146595" y="256" class="text-sub" font-size="11">78 commits</text>
     
-      <text x="20" y="288" class="text-sub" font-family="monospace" font-size="12">main</text>
-      <rect x="150" y="274" width="28.62796833773087" height="20" class="accent" rx="4" />
-      <text x="188.62796833773086" y="288" class="text-sub" font-size="11">31 commits</text>
+      <text x="20" y="288" class="text-sub" font-family="monospace" font-size="12">dev</text>
+      <rect x="150" y="274" width="33.1151832460733" height="20" class="accent" rx="4" />
+      <text x="193.1151832460733" y="288" class="text-sub" font-size="11">23 commits</text>
     
-      <text x="20" y="320" class="text-sub" font-family="monospace" font-size="12">nextjs-ai-chatb</text>
-      <rect x="150" y="306" width="2.770448548812665" height="20" class="accent" rx="4" />
-      <text x="162.77044854881265" y="320" class="text-sub" font-size="11">3 commits</text>
+      <text x="20" y="320" class="text-sub" font-family="monospace" font-size="12">ai-chatbot-atte</text>
+      <rect x="150" y="306" width="7.198952879581152" height="20" class="accent" rx="4" />
+      <text x="167.19895287958116" y="320" class="text-sub" font-size="11">5 commits</text>
     
-      <text x="20" y="352" class="text-sub" font-family="monospace" font-size="12">production</text>
-      <rect x="150" y="338" width="350" height="20" class="accent" rx="4" />
-      <text x="510" y="352" class="text-sub" font-size="11">379 commits</text>
+      <text x="20" y="352" class="text-sub" font-family="monospace" font-size="12">add-next-auth</text>
+      <rect x="150" y="338" width="4.319371727748691" height="20" class="accent" rx="4" />
+      <text x="164.3193717277487" y="352" class="text-sub" font-size="11">3 commits</text>
     
     </svg>
   

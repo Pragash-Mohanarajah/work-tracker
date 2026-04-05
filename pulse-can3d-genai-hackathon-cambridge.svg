@@ -1,5 +1,5 @@
 
-    <svg width="540" height="90" xmlns="http://www.w3.org/2000/svg">
+    <svg width="800" height="90" xmlns="http://www.w3.org/2000/svg">
       
   <style>
     .card-bg { fill: #ffffff; stroke: #d0d7de; }
@@ -21,12 +21,12 @@
       <rect width="100%" height="100%" class="card-bg" rx="6" />
       <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">Can3D-GenAI-Hackathon-Cambridge Repository Pulse</text>
       <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
-      <text x="350" y="42" class="text-sub" font-size="10">12 Month Activity</text>
-      <text x="510" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
+      <text x="550" y="42" class="text-sub" font-size="10">12 Month Activity</text>
+      <text x="780" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
       
       <text x="10" y="65" class="text-main" font-family="monospace" font-size="11">shap-e</text>
-      <polyline points="350,70 363.6363636363636,70 377.27272727272725,70 390.9090909090909,70 404.54545454545456,70 418.1818181818182,70 431.8181818181818,70 445.45454545454544,70 459.0909090909091,70 472.72727272727275,70 486.3636363636364,70 500,70" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="510" y="65" class="text-sub" font-size="9" text-anchor="end">0</text>
+      <polyline points="550,70 563.6363636363636,70 577.2727272727273,70 590.9090909090909,70 604.5454545454545,70 618.1818181818182,70 631.8181818181818,70 645.4545454545455,70 659.0909090909091,70 672.7272727272727,70 686.3636363636364,70 700,70" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="65" class="text-sub" font-size="9" text-anchor="end">0</text>
     
     </svg>
   

@@ -1,5 +1,5 @@
 
-    <svg width="600" height="240" xmlns="http://www.w3.org/2000/svg">
+    <svg width="800" height="280" xmlns="http://www.w3.org/2000/svg">
       
   <style>
     .card-bg { fill: #ffffff; stroke: #d0d7de; }
@@ -20,22 +20,22 @@
 
       <rect width="100%" height="100%" class="card-bg" rx="10" />
       <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Workday Rhythm (Punch Card)</text>
-      <text x="30" y="55.42857142857143" text-anchor="end" class="text-sub" font-size="9">Sun</text><text x="30" y="78.28571428571429" text-anchor="end" class="text-sub" font-size="9">Mon</text><text x="30" y="101.14285714285715" text-anchor="end" class="text-sub" font-size="9">Tue</text><text x="30" y="124" text-anchor="end" class="text-sub" font-size="9">Wed</text><text x="30" y="146.85714285714286" text-anchor="end" class="text-sub" font-size="9">Thu</text><text x="30" y="169.7142857142857" text-anchor="end" class="text-sub" font-size="9">Fri</text><text x="30" y="192.57142857142856" text-anchor="end" class="text-sub" font-size="9">Sat</text>
-      <text x="50.833333333333336" y="215" text-anchor="middle" class="text-sub" font-size="9">0h</text><text x="180.83333333333334" y="215" text-anchor="middle" class="text-sub" font-size="9">6h</text><text x="310.8333333333333" y="215" text-anchor="middle" class="text-sub" font-size="9">12h</text><text x="440.8333333333333" y="215" text-anchor="middle" class="text-sub" font-size="9">18h</text><text x="549.1666666666667" y="215" text-anchor="middle" class="text-sub" font-size="9">23h</text>
+      <text x="30" y="58.285714285714285" text-anchor="end" class="text-sub" font-size="9">Sun</text><text x="30" y="86.85714285714286" text-anchor="end" class="text-sub" font-size="9">Mon</text><text x="30" y="115.42857142857143" text-anchor="end" class="text-sub" font-size="9">Tue</text><text x="30" y="144" text-anchor="end" class="text-sub" font-size="9">Wed</text><text x="30" y="172.57142857142856" text-anchor="end" class="text-sub" font-size="9">Thu</text><text x="30" y="201.14285714285714" text-anchor="end" class="text-sub" font-size="9">Fri</text><text x="30" y="229.71428571428572" text-anchor="end" class="text-sub" font-size="9">Sat</text>
+      <text x="54.166666666666664" y="255" text-anchor="middle" class="text-sub" font-size="9">0h</text><text x="224.16666666666666" y="255" text-anchor="middle" class="text-sub" font-size="9">6h</text><text x="394.1666666666667" y="255" text-anchor="middle" class="text-sub" font-size="9">12h</text><text x="564.1666666666666" y="255" text-anchor="middle" class="text-sub" font-size="9">18h</text><text x="705.8333333333333" y="255" text-anchor="middle" class="text-sub" font-size="9">23h</text>
       
-      <text x="370" y="224" class="text-sub" font-size="9">Commits:</text>
+      <text x="570" y="264" class="text-sub" font-size="9">Commits:</text>
       
-      <circle cx="420" cy="220" r="2.7083333333333335" fill="#7bc96f" opacity="0.8" />
-      <text x="432" y="224" class="text-sub" font-size="9">0</text>
+      <circle cx="620" cy="260" r="3.5416666666666665" fill="#7bc96f" opacity="0.8" />
+      <text x="632" y="264" class="text-sub" font-size="9">0</text>
     
-      <circle cx="460" cy="220" r="5.416666666666667" fill="#7bc96f" opacity="0.8" />
-      <text x="472" y="224" class="text-sub" font-size="9">0</text>
+      <circle cx="660" cy="260" r="7.083333333333333" fill="#7bc96f" opacity="0.8" />
+      <text x="672" y="264" class="text-sub" font-size="9">0</text>
     
-      <circle cx="500" cy="220" r="8.125" fill="#7bc96f" opacity="0.8" />
-      <text x="512" y="224" class="text-sub" font-size="9">0</text>
+      <circle cx="700" cy="260" r="10.625" fill="#7bc96f" opacity="0.8" />
+      <text x="712" y="264" class="text-sub" font-size="9">0</text>
     
-      <circle cx="540" cy="220" r="10.833333333333334" fill="#7bc96f" opacity="0.8" />
-      <text x="552" y="224" class="text-sub" font-size="9">0</text>
+      <circle cx="740" cy="260" r="14.166666666666666" fill="#7bc96f" opacity="0.8" />
+      <text x="752" y="264" class="text-sub" font-size="9">0</text>
     
     </svg>
   
