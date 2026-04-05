@@ -166,4 +166,4 @@ async function runTracker() {
   }
 }
 
-module.exports = { runTracker };
+runTracker();
