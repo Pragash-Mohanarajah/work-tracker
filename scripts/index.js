@@ -41,9 +41,11 @@ async function runTracker() {
       org.totalCommits += commits;
 
       // Aggregate languages for the organization
-      p.languages.forEach(lang => {
-        org.languages[lang.name] = (org.languages[lang.name] || 0) + lang.bytes;
-      });
+      if (p.languages && Array.isArray(p.languages)) {
+        p.languages.forEach(lang => {
+          org.languages[lang.name] = (org.languages[lang.name] || 0) + lang.bytes;
+        });
+      }
     });
 
     // Determine top languages for each organization
