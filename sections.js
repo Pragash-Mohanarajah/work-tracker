@@ -1,4 +1,4 @@
-const { generatePieChartSvg, generateBranchActivitySvg } = require("./visualizer");
+const { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg } = require("./visualizer");
 
 function buildWorkTrackerSection(data) {
   const organizations = data?.organizations || [];
@@ -14,6 +14,12 @@ function buildWorkTrackerSection(data) {
     "",
     "### 📊 Contribution by Organization",
     "!Org Distribution",
+    "",
+    "### 🕸️ Tech Stack Breadth",
+    "!Language Radar",
+    "",
+    "### ⏰ Productivity Rhythm",
+    "!Punch Card",
     ""
   ];
 
