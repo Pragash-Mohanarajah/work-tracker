@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchStats } = require("./fetchStats");
+const { buildWorkTrackerSection } = require("./sections");
 const {
-  buildWorkTrackerSection,
   generatePieChartSvg,
   generateBranchActivitySvg,
   generateRadarChartSvg,
