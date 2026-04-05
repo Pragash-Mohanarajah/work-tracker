@@ -12,7 +12,9 @@ const {
   generateLanguageBarSvg,
   generateWeeklyActivitySvg,
   generateContributionLineSvg,
-  generateCategoryDonutSvg
+  generateCategoryDonutSvg,
+  generateSummaryCardSvg,
+  generateMilestonesSvg
 } = require("./visualizer");
 
 async function runTracker() {
@@ -43,6 +45,30 @@ async function runTracker() {
       ...rawData,
       organizations: Array.from(orgMap.values()).sort((a, b) => b.totalCommits - a.totalCommits)
     };
+
+    // 0. Generate Summary Card
+    const summaryStats = {
+      totalCommits: data.commits.total,
+      streak: data.activity.streak.current,
+      loc: data.codeStats.estimatedLinesOfCode,
+      age: data.profile.accountAgeDays
+    };
+    const summarySvg = generateSummaryCardSvg(summaryStats);
+    fs.writeFileSync(path.resolve(process.cwd(), "summary-card.svg"), summarySvg);
+
+    // 0.1 Generate Milestones
+    const milestoneLevels = [1000, 500, 250, 100, 50, 10];
+    const milestones = Object.entries(data.commits.byRepository)
+      .map(([repo, count]) => ({
+        repo,
+        count,
+        level: milestoneLevels.find(l => count >= l)
+      }))
+      .filter(m => m.level)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 5);
+    const milestoneSvg = generateMilestonesSvg(milestones);
+    fs.writeFileSync(path.resolve(process.cwd(), "milestones.svg"), milestoneSvg);
 
     // --- GENERATE GRAPHICS ---
     

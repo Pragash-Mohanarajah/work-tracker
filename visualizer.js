@@ -1,3 +1,22 @@
+const getStyles = () => `
+  <style>
+    .card-bg { fill: #ffffff; stroke: #d0d7de; }
+    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .accent { fill: #0969da; }
+    .accent-stroke { stroke: #0969da; }
+    .grid-line { stroke: #d0d7de; }
+    @media (prefers-color-scheme: dark) {
+      .card-bg { fill: #0d1117; stroke: #30363d; }
+      .text-main { fill: #f0f6fc; }
+      .text-sub { fill: #8b949e; }
+      .accent { fill: #58a6ff; }
+      .accent-stroke { stroke: #58a6ff; }
+      .grid-line { stroke: #30363d; }
+    }
+  </style>
+`;
+
 /**
  * Generates a modern Donut Chart for better legibility
  */
@@ -29,21 +48,22 @@ function generatePieChartSvg(data, title) {
     const largeArcFlag = sliceAngle > Math.PI ? 1 : 0;
     const pathData = `M ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} L ${ix1} ${iy1} A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${ix2} ${iy2} Z`;
     
-    return `<path d="${pathData}" fill="${colors[i % colors.length]}" stroke="#0d1117" stroke-width="2" />`;
+    return `<path d="${pathData}" fill="${colors[i % colors.length]}" class="card-bg" stroke-width="2" />`;
   });
 
   const legend = data.map((item, i) => {
     const y = 60 + i * 22;
     return `
       <rect x="260" y="${y}" width="12" height="12" fill="${colors[i % colors.length]}" rx="3" />
-      <text x="280" y="${y + 10}" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial" font-size="12">${item.label}</text>
+      <text x="280" y="${y + 10}" class="text-sub" font-size="12">${item.label}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="35" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
       ${paths.join("")}
       ${legend.join("")}
     </svg>
@@ -57,7 +77,17 @@ function generateBranchActivitySvg(branches) {
   const width = 540;
   const barHeight = 20;
   const gap = 12;
-  const height = branches.length * (barHeight + gap) + 60;
+  const height = Math.max(branches.length * (barHeight + gap) + 60, 100);
+
+  if (!branches || branches.length === 0) {
+    return `
+      <svg width="${width}" height="80" xmlns="http://www.w3.org/2000/svg">
+        ${getStyles()}
+        <rect width="100%" height="100%" class="card-bg" rx="10" />
+        <text x="50%" y="50%" text-anchor="middle" class="text-sub" font-size="12">Branch commit breakdown not available for this project</text>
+      </svg>
+    `;
+  }
 
   const maxCommits = Math.max(...branches.map(b => b.commits), 1);
 
@@ -65,16 +95,17 @@ function generateBranchActivitySvg(branches) {
     const y = 50 + i * (barHeight + gap);
     const barWidth = (branch.commits / maxCommits) * 350;
     return `
-      <text x="20" y="${y + 14}" fill="#8b949e" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
-      <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" fill="#58a6ff" rx="4" />
-      <text x="${160 + barWidth}" y="${y + 14}" fill="#7d8590" font-family="sans-serif" font-size="11">${branch.commits} commits</text>
+      <text x="20" y="${y + 14}" class="text-sub" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
+      <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" class="accent" rx="4" />
+      <text x="${160 + barWidth}" y="${y + 14}" class="text-sub" font-size="11">${branch.commits} commits</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">Branch Contribution</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Branch Contribution</text>
       ${rows.join("")}
     </svg>
   `;
@@ -106,22 +137,23 @@ function generateRadarChartSvg(data, title) {
       const y = center + r * Math.sin(i * angleStep - Math.PI / 2);
       return `${x},${y}`;
     }).join(" ");
-    return `<polygon points="${p}" fill="none" stroke="#30363d" stroke-width="1" />`;
+    return `<polygon points="${p}" fill="none" class="grid-line" stroke-width="1" />`;
   });
 
   // Labels
   const labels = data.map((d, i) => {
     const x = center + (radius + 30) * Math.cos(i * angleStep - Math.PI / 2);
     const y = center + (radius + 15) * Math.sin(i * angleStep - Math.PI / 2);
-    return `<text x="${x}" y="${y}" text-anchor="middle" fill="#7d8590" font-family="sans-serif" font-size="11" font-weight="500">${d.label}</text>`;
+    return `<text x="${x}" y="${y}" text-anchor="middle" class="text-sub" font-size="11" font-weight="500">${d.label}</text>`;
   });
 
   return `
     <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="35" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">${title}</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
       ${webs.join("")}
-      <polygon points="${points}" fill="rgba(88, 166, 255, 0.25)" stroke="#58a6ff" stroke-width="2.5" />
+      <polygon points="${points}" fill="rgba(88, 166, 255, 0.25)" class="accent-stroke" stroke-width="2.5" />
       ${labels.join("")}
     </svg>
   `;
@@ -154,11 +186,11 @@ function generatePunchCardSvg(matrix) {
   });
 
   const dayLabels = days.map((day, i) => 
-    `<text x="${padding - 10}" y="${padding + i * cellHeight + cellHeight / 2 + 4}" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">${day}</text>`
+    `<text x="${padding - 10}" y="${padding + i * cellHeight + cellHeight / 2 + 4}" text-anchor="end" class="text-sub" font-size="9">${day}</text>`
   );
 
   const hourLabels = [0, 6, 12, 18, 23].map(h => 
-    `<text x="${padding + h * cellWidth + cellWidth / 2}" y="${height - padding + 15}" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">${h}h</text>`
+    `<text x="${padding + h * cellWidth + cellWidth / 2}" y="${height - padding + 15}" text-anchor="middle" class="text-sub" font-size="9">${h}h</text>`
   );
 
   // Legend
@@ -169,18 +201,19 @@ function generatePunchCardSvg(matrix) {
     const x = legendX + i * 40;
     return `
       <circle cx="${x}" cy="${legendY}" r="${r}" fill="#7bc96f" opacity="0.8" />
-      <text x="${x + 12}" y="${legendY + 4}" fill="#666" font-family="sans-serif" font-size="9">${Math.round(f * max)}</text>
+      <text x="${x + 12}" y="${legendY + 4}" class="text-sub" font-size="9">${Math.round(f * max)}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">Workday Rhythm (Punch Card)</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Workday Rhythm (Punch Card)</text>
       ${dayLabels.join("")}
       ${hourLabels.join("")}
       ${circles.join("")}
-      <text x="${legendX - 50}" y="${legendY + 4}" fill="#8b949e" font-family="sans-serif" font-size="9">Commits:</text>
+      <text x="${legendX - 50}" y="${legendY + 4}" class="text-sub" font-size="9">Commits:</text>
       ${legendItems.join("")}
     </svg>
   `;
@@ -199,15 +232,17 @@ function generateTopContributorsSvg(contributors, title = "Top Contributors") {
     const y = 40 + i * rowHeight;
     const barWidth = (c.commits / maxCommits) * 200;
     return `
-      <text x="10" y="${y + 20}" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="500">${c.name}</text>
+      <text x="10" y="${y + 20}" class="text-main" font-size="12" font-weight="500">${c.name}</text>
       <rect x="120" y="${y + 8}" width="${barWidth}" height="15" fill="#239a3b" rx="2" />
-      <text x="${125 + barWidth}" y="${y + 20}" fill="#8b949e" font-family="sans-serif" font-size="11">${c.commits} commits</text>
+      <text x="${125 + barWidth}" y="${y + 20}" class="text-sub" font-size="11">${c.commits} commits</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <text x="10" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#c9d1d9">${title}</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="10" y="25" class="text-main" font-size="14" font-weight="bold">${title}</text>
       ${rows.join("")}
     </svg>
   `;
@@ -234,19 +269,20 @@ function generateOrgSparklinesSvg(repos, orgName) {
     }).join(" ");
 
     return `
-      <text x="10" y="${y + 15}" fill="#c9d1d9" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
-      <polyline points="${points}" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="510" y="${y + 15}" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">${repo.totalCommits}</text>
+      <text x="10" y="${y + 15}" class="text-main" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
+      <polyline points="${points}" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="${y + 15}" class="text-sub" font-size="9" text-anchor="end">${repo.totalCommits}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="6" />
-      <text x="15" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f0f6fc">${orgName} Repository Pulse</text>
-      <text x="15" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">Repository Name</text>
-      <text x="350" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">12 Month Activity</text>
-      <text x="510" y="42" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">Total</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="6" />
+      <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">${orgName} Repository Pulse</text>
+      <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
+      <text x="350" y="42" class="text-sub" font-size="10">12 Month Activity</text>
+      <text x="510" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
       ${rows.join("")}
     </svg>
   `;
@@ -278,14 +314,15 @@ function generateLanguageBarSvg(languages, title) {
     const pct = ((value / total) * 100).toFixed(1);
     return `
       <circle cx="${20 + (i * 80)}" cy="80" r="4" fill="${colors[i % colors.length]}" />
-      <text x="${30 + (i * 80)}" y="83" fill="#8b949e" font-family="sans-serif" font-size="10">${name} ${pct}%</text>
+      <text x="${30 + (i * 80)}" y="83" class="text-sub" font-size="10">${name} ${pct}%</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="30" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">${title}</text>
       ${segments.join("")}
       ${legend.join("")}
     </svg>
@@ -312,14 +349,15 @@ function generateWeeklyActivitySvg(daysData, title) {
     const y = height - 40 - h;
     return `
       <rect x="${x}" y="${y}" width="${barWidth}" height="${h}" fill="#3fb950" rx="4" />
-      <text x="${x + barWidth / 2}" y="${height - 20}" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="11">${dayNames[i]}</text>
+      <text x="${x + barWidth / 2}" y="${height - 20}" text-anchor="middle" class="text-sub" font-size="11">${dayNames[i]}</text>
     `;
   });
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="35" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">${title}</text>
       ${bars.join("")}
     </svg>
   `;
@@ -344,21 +382,22 @@ function generateContributionLineSvg(history, title) {
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="30" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">${title}</text>
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">${title}</text>
       
       <!-- Grid lines -->
-      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="#30363d" />
-      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="#30363d" />
+      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" class="grid-line" />
+      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" class="grid-line" />
       
       <!-- Area under line -->
       <polyline points="${padding},${height - padding} ${points} ${width - padding},${height - padding}" fill="rgba(56, 139, 253, 0.1)" />
       
       <!-- The Line -->
-      <polyline points="${points}" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      <polyline points="${points}" fill="none" class="accent-stroke" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
       
-      <text x="${padding}" y="${height - 15}" fill="#8b949e" font-family="sans-serif" font-size="10">${history[0].date.split('-')[0]}</text>
-      <text x="${width - padding}" y="${height - 15}" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="10">${history[history.length-1].date.split('-')[0]}</text>
+      <text x="${padding}" y="${height - 15}" class="text-sub" font-size="10">${history[0].date.split('-')[0]}</text>
+      <text x="${width - padding}" y="${height - 15}" text-anchor="end" class="text-sub" font-size="10">${history[history.length-1].date.split('-')[0]}</text>
     </svg>
   `;
 }
@@ -374,9 +413,70 @@ function generateCategoryDonutSvg(categories, title) {
   return generatePieChartSvg(data, title);
 }
 
+/**
+ * Generates a Summary Card for landing pages
+ */
+function generateSummaryCardSvg(stats) {
+  const width = 450;
+  const height = 120;
+  
+  const items = [
+    { label: "Total Commits", value: stats.totalCommits },
+    { label: "Streak", value: stats.streak + " Days" },
+    { label: "Estimated LOC", value: (stats.loc / 1000).toFixed(1) + "k" },
+    { label: "Account Age", value: stats.age + " Days" }
+  ];
+
+  const columns = items.map((item, i) => {
+    const x = 30 + (i * 105);
+    return `
+      <text x="${x}" y="65" class="text-sub" font-size="10" text-anchor="start">${item.label}</text>
+      <text x="${x}" y="85" class="text-main" font-size="18" font-weight="800" text-anchor="start">${item.value}</text>
+    `;
+  });
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="12" />
+      <text x="20" y="30" class="text-main" font-size="14" font-weight="bold">Pragash's Developer Snapshot</text>
+      <line x1="20" y1="45" x2="430" y2="45" class="grid-line" stroke-dasharray="2,2" />
+      ${columns.join("")}
+    </svg>
+  `;
+}
+
+/**
+ * Generates a Milestone Card
+ */
+function generateMilestonesSvg(milestones) {
+  const width = 450;
+  const height = 180;
+  
+  const rows = milestones.map((m, i) => {
+    const y = 60 + (i * 22);
+    return `
+      <circle cx="30" cy="${y - 4}" r="3" class="accent" />
+      <text x="45" y="${y}" class="text-main" font-size="12" font-weight="500">${m.repo.split('/').pop()}</text>
+      <text x="420" y="${y}" class="text-sub" font-size="11" text-anchor="end">${m.level}+ commits</text>
+    `;
+  });
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      ${getStyles()}
+      <rect width="100%" height="100%" class="card-bg" rx="12" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">🏆 Recent Milestones</text>
+      <text x="20" y="45" class="text-sub" font-size="11">Top repositories by contribution volume</text>
+      ${rows.join("")}
+    </svg>
+  `;
+}
+
 module.exports = { 
   generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, 
   generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg,
   generateLanguageBarSvg, generateWeeklyActivitySvg,
-  generateContributionLineSvg, generateCategoryDonutSvg
+  generateContributionLineSvg, generateCategoryDonutSvg,
+  generateSummaryCardSvg, generateMilestonesSvg
 };
