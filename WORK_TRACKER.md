@@ -30,13 +30,13 @@ Detailed breakdown of contributions across professional and personal entities.
   <img src="./radar-pragash-mohanarajah.svg" width="350" />
 </p>
 
-##### 📦 portfolio
-> Pragash Mohanarajah: Personal Portfolio
-<img src="./branch-Pragash-Mohanarajah-portfolio.svg" width="500" />
-
 ##### 📦 work-tracker
 > Pragash's Internal Tracker for Work Related GitHub Activity
 <img src="./branch-Pragash-Mohanarajah-work-tracker.svg" width="500" />
+
+##### 📦 portfolio
+> Pragash Mohanarajah: Personal Portfolio
+<img src="./branch-Pragash-Mohanarajah-portfolio.svg" width="500" />
 
 ##### 📦 Pragash-Mohanarajah
 > My GitHub Profile
