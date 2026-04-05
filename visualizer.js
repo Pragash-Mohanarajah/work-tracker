@@ -124,7 +124,7 @@ function generateRadarChartSvg(data, title) {
  */
 function generatePunchCardSvg(matrix) {
   const width = 600;
-  const height = 200;
+  const height = 240;
   const padding = 40;
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   
@@ -153,14 +153,97 @@ function generatePunchCardSvg(matrix) {
     `<text x="${padding + h * cellWidth + cellWidth / 2}" y="${height - padding + 15}" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">${h}h</text>`
   );
 
+  // Legend
+  const legendY = height - 20;
+  const legendX = width - 180;
+  const legendItems = [0.25, 0.5, 0.75, 1].map((f, i) => {
+    const r = f * (Math.min(cellWidth, cellHeight) / 2);
+    const x = legendX + i * 40;
+    return `
+      <circle cx="${x}" cy="${legendY}" r="${r}" fill="#7bc96f" opacity="0.8" />
+      <text x="${x + 12}" y="${legendY + 4}" fill="#666" font-family="sans-serif" font-size="9">${Math.round(f * max)}</text>
+    `;
+  });
+
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <text x="10" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#c9d1d9">Workday Rhythm (Punch Card)</text>
       ${dayLabels.join("")}
       ${hourLabels.join("")}
       ${circles.join("")}
+      <text x="${legendX - 40}" y="${legendY + 4}" fill="#8b949e" font-family="sans-serif" font-size="9">Commits:</text>
+      ${legendItems.join("")}
     </svg>
   `;
 }
 
-module.exports = { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg };
+/**
+ * Generates a chart for Top Contributors in a team setting
+ */
+function generateTopContributorsSvg(contributors, title = "Top Contributors") {
+  const width = 400;
+  const rowHeight = 35;
+  const height = contributors.length * rowHeight + 50;
+  const maxCommits = Math.max(...contributors.map(c => c.commits), 1);
+
+  const rows = contributors.map((c, i) => {
+    const y = 40 + i * rowHeight;
+    const barWidth = (c.commits / maxCommits) * 200;
+    return `
+      <text x="10" y="${y + 20}" fill="#c9d1d9" font-family="sans-serif" font-size="12" font-weight="500">${c.name}</text>
+      <rect x="120" y="${y + 8}" width="${barWidth}" height="15" fill="#239a3b" rx="2" />
+      <text x="${125 + barWidth}" y="${y + 20}" fill="#8b949e" font-family="sans-serif" font-size="11">${c.commits} commits</text>
+    `;
+  });
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <text x="10" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#c9d1d9">${title}</text>
+      ${rows.join("")}
+    </svg>
+  `;
+}
+
+/**
+ * Efficiently showcases activity across many repositories using Sparklines
+ */
+function generateOrgSparklinesSvg(repos, orgName) {
+  const width = 540;
+  const rowHeight = 30;
+  const height = repos.length * rowHeight + 60;
+
+  const rows = repos.map((repo, i) => {
+    const y = 50 + i * rowHeight;
+    const activity = repo.monthlyActivity || Array(12).fill(0);
+    const maxAct = Math.max(...activity, 1);
+    
+    // Generate sparkline path
+    const points = activity.map((val, j) => {
+      const px = 350 + (j * (150 / 11));
+      const py = y + 20 - (val / maxAct) * 15;
+      return `${px},${py}`;
+    }).join(" ");
+
+    return `
+      <text x="10" y="${y + 15}" fill="#c9d1d9" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
+      <polyline points="${points}" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="${y + 15}" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">${repo.totalCommits}</text>
+    `;
+  });
+
+  return `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" rx="6" />
+      <text x="15" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f0f6fc">${orgName} Repository Pulse</text>
+      <text x="15" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">Repository Name</text>
+      <text x="350" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">12 Month Activity</text>
+      <text x="510" y="42" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">Total</text>
+      ${rows.join("")}
+    </svg>
+  `;
+}
+
+module.exports = { 
+  generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, 
+  generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg 
+};

@@ -1,4 +1,4 @@
-const { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg } = require("./visualizer");
+const { generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg } = require("./visualizer");
 
 function buildWorkTrackerSection(data) {
   const organizations = data?.organizations || [];
@@ -23,10 +23,19 @@ function buildWorkTrackerSection(data) {
     ""
   ];
 
+  if (data.teamProject) {
+    markdown.push("### 🤝 Team Collaboration", "!Top Contributors", "");
+  }
+  
+  markdown.push("---");
+
   organizations.forEach(org => {
     markdown.push(`#### 🏛️ ${org.name}`);
     markdown.push(`- **Total Repositories:** ${org.repos.length}`);
     markdown.push(`- **Primary Stack:** ${org.topLanguages.join(", ")}`);
+    markdown.push("");
+    markdown.push(`### 📈 ${org.name} Pulse`);
+    markdown.push(`!Pulse for ${org.name}`);
     markdown.push("");
     
     org.repos.slice(0, 3).forEach(repo => {

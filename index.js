@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchStats } = require("../dev-metrics/fetchStats"); // Reusing your existing fetch logic
-const { buildWorkTrackerSection, generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg } = require("./sections");
+const { buildWorkTrackerSection, generatePieChartSvg, generateBranchActivitySvg, generateRadarChartSvg, generatePunchCardSvg, generateTopContributorsSvg, generateOrgSparklinesSvg } = require("./sections");
 
 async function runTracker() {
   console.log("🚀 Starting Work Tracker synchronization...");
@@ -28,8 +28,19 @@ async function runTracker() {
     const punchCardSvg = generatePunchCardSvg(punchCardMatrix);
     fs.writeFileSync(path.resolve(process.cwd(), "punch-card.svg"), punchCardSvg);
 
+    // 1.3 Generate Team Contributors (if applicable)
+    if (data.teamProject) {
+      const teamSvg = generateTopContributorsSvg(data.teamProject.contributors);
+      fs.writeFileSync(path.resolve(process.cwd(), "top-contributors.svg"), teamSvg);
+    }
+
     // 2. Generate Branch Charts for each Repo
     data.organizations.forEach(org => {
+      // 2.1 Generate Organization Pulse (Sparklines)
+      const pulseSvg = generateOrgSparklinesSvg(org.repos, org.name);
+      const pulseFile = `pulse-${org.name.toLowerCase().replace(/\s/g, '-')}.svg`;
+      fs.writeFileSync(path.resolve(process.cwd(), pulseFile), pulseSvg);
+
       org.repos.slice(0, 3).forEach(repo => {
         const branchSvg = generateBranchActivitySvg(repo.branches || []);
         const fileName = `branch-${org.name}-${repo.name}.svg`;
