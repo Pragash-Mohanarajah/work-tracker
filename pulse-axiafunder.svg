@@ -1,0 +1,22 @@
+
+    <svg width="540" height="150" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" rx="6" />
+      <text x="15" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f0f6fc">AxiaFunder Repository Pulse</text>
+      <text x="15" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">Repository Name</text>
+      <text x="350" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">12 Month Activity</text>
+      <text x="510" y="42" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">Total</text>
+      
+      <text x="10" y="65" fill="#c9d1d9" font-family="monospace" font-size="11">dashboard-axiafunder</text>
+      <polyline points="350,70 363.6363636363636,70 377.27272727272725,70 390.9090909090909,70 404.54545454545456,70 418.1818181818182,70 431.8181818181818,70 445.45454545454544,70 459.0909090909091,70 472.72727272727275,70 486.3636363636364,70 500,70" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="65" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">1954</text>
+    
+      <text x="10" y="95" fill="#c9d1d9" font-family="monospace" font-size="11">landing-axiafunder</text>
+      <polyline points="350,100 363.6363636363636,100 377.27272727272725,100 390.9090909090909,100 404.54545454545456,100 418.1818181818182,100 431.8181818181818,100 445.45454545454544,100 459.0909090909091,100 472.72727272727275,100 486.3636363636364,100 500,100" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="95" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">104</text>
+    
+      <text x="10" y="125" fill="#c9d1d9" font-family="monospace" font-size="11">axiafunder</text>
+      <polyline points="350,130 363.6363636363636,130 377.27272727272725,130 390.9090909090909,130 404.54545454545456,130 418.1818181818182,130 431.8181818181818,130 445.45454545454544,130 459.0909090909091,130 472.72727272727275,130 486.3636363636364,130 500,130" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="125" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">1</text>
+    
+    </svg>
+  

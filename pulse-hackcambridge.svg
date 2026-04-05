@@ -1,0 +1,78 @@
+
+    <svg width="540" height="570" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" rx="6" />
+      <text x="15" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f0f6fc">hackcambridge Repository Pulse</text>
+      <text x="15" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">Repository Name</text>
+      <text x="350" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">12 Month Activity</text>
+      <text x="510" y="42" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">Total</text>
+      
+      <text x="10" y="65" fill="#c9d1d9" font-family="monospace" font-size="11">hc-archive</text>
+      <polyline points="350,70 363.6363636363636,70 377.27272727272725,70 390.9090909090909,70 404.54545454545456,70 418.1818181818182,70 431.8181818181818,70 445.45454545454544,70 459.0909090909091,70 472.72727272727275,70 486.3636363636364,70 500,70" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="65" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="95" fill="#c9d1d9" font-family="monospace" font-size="11">hc-foundation</text>
+      <polyline points="350,100 363.6363636363636,100 377.27272727272725,100 390.9090909090909,100 404.54545454545456,100 418.1818181818182,100 431.8181818181818,100 445.45454545454544,100 459.0909090909091,100 472.72727272727275,100 486.3636363636364,100 500,100" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="95" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">21</text>
+    
+      <text x="10" y="125" fill="#c9d1d9" font-family="monospace" font-size="11">hc-foundation-lite</text>
+      <polyline points="350,130 363.6363636363636,130 377.27272727272725,130 390.9090909090909,130 404.54545454545456,130 418.1818181818182,130 431.8181818181818,130 445.45454545454544,130 459.0909090909091,130 472.72727272727275,130 486.3636363636364,130 500,130" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="125" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">37</text>
+    
+      <text x="10" y="155" fill="#c9d1d9" font-family="monospace" font-size="11">hc-2023-spyder</text>
+      <polyline points="350,160 363.6363636363636,160 377.27272727272725,160 390.9090909090909,160 404.54545454545456,160 418.1818181818182,160 431.8181818181818,160 445.45454545454544,160 459.0909090909091,160 472.72727272727275,160 486.3636363636364,160 500,160" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="155" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">30</text>
+    
+      <text x="10" y="185" fill="#c9d1d9" font-family="monospace" font-size="11">hc-2020-prototype</text>
+      <polyline points="350,190 363.6363636363636,190 377.27272727272725,190 390.9090909090909,190 404.54545454545456,190 418.1818181818182,190 431.8181818181818,190 445.45454545454544,190 459.0909090909091,190 472.72727272727275,190 486.3636363636364,190 500,190" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="185" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">91</text>
+    
+      <text x="10" y="215" fill="#c9d1d9" font-family="monospace" font-size="11">hc-2019-4d</text>
+      <polyline points="350,220 363.6363636363636,220 377.27272727272725,220 390.9090909090909,220 404.54545454545456,220 418.1818181818182,220 431.8181818181818,220 445.45454545454544,220 459.0909090909091,220 472.72727272727275,220 486.3636363636364,220 500,220" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="215" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="245" fill="#c9d1d9" font-family="monospace" font-size="11">hc-2022-atlas</text>
+      <polyline points="350,250 363.6363636363636,250 377.27272727272725,250 390.9090909090909,250 404.54545454545456,250 418.1818181818182,250 431.8181818181818,250 445.45454545454544,250 459.0909090909091,250 472.72727272727275,250 486.3636363636364,250 500,250" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="245" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="275" fill="#c9d1d9" font-family="monospace" font-size="11">hc2022-shared-files</text>
+      <polyline points="350,280 363.6363636363636,280 377.27272727272725,280 390.9090909090909,280 404.54545454545456,280 418.1818181818182,280 431.8181818181818,280 445.45454545454544,280 459.0909090909091,280 472.72727272727275,280 486.3636363636364,280 500,280" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="275" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="305" fill="#c9d1d9" font-family="monospace" font-size="11">gavel</text>
+      <polyline points="350,310 363.6363636363636,310 377.27272727272725,310 390.9090909090909,310 404.54545454545456,310 418.1818181818182,310 431.8181818181818,310 445.45454545454544,310 459.0909090909091,310 472.72727272727275,310 486.3636363636364,310 500,310" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="305" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="335" fill="#c9d1d9" font-family="monospace" font-size="11">hc-applications</text>
+      <polyline points="350,340 363.6363636363636,340 377.27272727272725,340 390.9090909090909,340 404.54545454545456,340 418.1818181818182,340 431.8181818181818,340 445.45454545454544,340 459.0909090909091,340 472.72727272727275,340 486.3636363636364,340 500,340" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="335" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="365" fill="#c9d1d9" font-family="monospace" font-size="11">hc-sponsors-portal</text>
+      <polyline points="350,370 363.6363636363636,370 377.27272727272725,370 390.9090909090909,370 404.54545454545456,370 418.1818181818182,370 431.8181818181818,370 445.45454545454544,370 459.0909090909091,370 472.72727272727275,370 486.3636363636364,370 500,370" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="365" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="395" fill="#c9d1d9" font-family="monospace" font-size="11">camvscovid-issues</text>
+      <polyline points="350,400 363.6363636363636,400 377.27272727272725,400 390.9090909090909,400 404.54545454545456,400 418.1818181818182,400 431.8181818181818,400 445.45454545454544,400 459.0909090909091,400 472.72727272727275,400 486.3636363636364,400 500,400" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="395" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="425" fill="#c9d1d9" font-family="monospace" font-size="11">live.hackcambridge.com</text>
+      <polyline points="350,430 363.6363636363636,430 377.27272727272725,430 390.9090909090909,430 404.54545454545456,430 418.1818181818182,430 431.8181818181818,430 445.45454545454544,430 459.0909090909091,430 472.72727272727275,430 486.3636363636364,430 500,430" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="425" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="455" fill="#c9d1d9" font-family="monospace" font-size="11">polaris-tokens</text>
+      <polyline points="350,460 363.6363636363636,460 377.27272727272725,460 390.9090909090909,460 404.54545454545456,460 418.1818181818182,460 431.8181818181818,460 445.45454545454544,460 459.0909090909091,460 472.72727272727275,460 486.3636363636364,460 500,460" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="455" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="485" fill="#c9d1d9" font-family="monospace" font-size="11">hc-sponsorship-portal-scripts</text>
+      <polyline points="350,490 363.6363636363636,490 377.27272727272725,490 390.9090909090909,490 404.54545454545456,490 418.1818181818182,490 431.8181818181818,490 445.45454545454544,490 459.0909090909091,490 472.72727272727275,490 486.3636363636364,490 500,490" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="485" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="515" fill="#c9d1d9" font-family="monospace" font-size="11">HELPq</text>
+      <polyline points="350,520 363.6363636363636,520 377.27272727272725,520 390.9090909090909,520 404.54545454545456,520 418.1818181818182,520 431.8181818181818,520 445.45454545454544,520 459.0909090909091,520 472.72727272727275,520 486.3636363636364,520 500,520" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="515" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="10" y="545" fill="#c9d1d9" font-family="monospace" font-size="11">fractals</text>
+      <polyline points="350,550 363.6363636363636,550 377.27272727272725,550 390.9090909090909,550 404.54545454545456,550 418.1818181818182,550 431.8181818181818,550 445.45454545454544,550 459.0909090909091,550 472.72727272727275,550 486.3636363636364,550 500,550" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="545" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">0</text>
+    
+    </svg>
+  
