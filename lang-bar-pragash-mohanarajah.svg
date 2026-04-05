@@ -1,26 +1,26 @@
 
     <svg width="800" height="100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
+      <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Pragash-Mohanarajah Tech Mix</text>
+      <rect x="20" y="50" width="329.7674312130065" height="12" fill="#58a6ff" /><rect x="349.7674312130065" y="50" width="105.72078628694639" height="12" fill="#3fb950" /><rect x="455.4882174999529" y="50" width="72.49145081647339" height="12" fill="#f0883e" /><rect x="527.9796683164263" y="50" width="59.20119109698444" height="12" fill="#bc8cff" /><rect x="587.1808594134108" y="50" width="53.42139127953071" height="12" fill="#ff7b72" /><rect x="640.6022506929414" y="50" width="31.27305034474028" height="12" fill="#6e7681" />
       
-  <style>
-    .card-bg { fill: #ffffff; stroke: #d0d7de; }
-    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .accent { fill: #0969da; }
-    .accent-stroke { stroke: #0969da; }
-    .grid-line { stroke: #d0d7de; }
-    @media (prefers-color-scheme: dark) {
-      .card-bg { fill: #0d1117; stroke: #30363d; }
-      .text-main { fill: #f0f6fc; }
-      .text-sub { fill: #8b949e; }
-      .accent { fill: #58a6ff; }
-      .accent-stroke { stroke: #58a6ff; }
-      .grid-line { stroke: #30363d; }
-    }
-  </style>
-
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Pragash-Mohanarajah Tech Mix</text>
-      
-      
+      <circle cx="20" cy="80" r="4" fill="#58a6ff" />
+      <text x="30" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">C 43.4%</text>
+    
+      <circle cx="100" cy="80" r="4" fill="#3fb950" />
+      <text x="110" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Jupyter Notebook 13.9%</text>
+    
+      <circle cx="180" cy="80" r="4" fill="#f0883e" />
+      <text x="190" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Python 9.5%</text>
+    
+      <circle cx="260" cy="80" r="4" fill="#bc8cff" />
+      <text x="270" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">TypeScript 7.8%</text>
+    
+      <circle cx="340" cy="80" r="4" fill="#ff7b72" />
+      <text x="350" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">HTML 7.0%</text>
+    
+      <circle cx="420" cy="80" r="4" fill="#6e7681" />
+      <text x="430" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">JavaScript 4.1%</text>
+    
     </svg>
   

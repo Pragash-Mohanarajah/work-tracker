@@ -1,36 +1,18 @@
 
     <svg width="800" height="120" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="6" />
+      <text x="15" y="25" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">IB-Integrated-Design-Project-Group-M202 Repository Pulse</text>
+      <text x="15" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Repository Name</text>
+      <text x="550" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">12 Month Activity</text>
+      <text x="780" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="end">Total</text>
       
-  <style>
-    .card-bg { fill: #ffffff; stroke: #d0d7de; }
-    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .accent { fill: #0969da; }
-    .accent-stroke { stroke: #0969da; }
-    .grid-line { stroke: #d0d7de; }
-    @media (prefers-color-scheme: dark) {
-      .card-bg { fill: #0d1117; stroke: #30363d; }
-      .text-main { fill: #f0f6fc; }
-      .text-sub { fill: #8b949e; }
-      .accent { fill: #58a6ff; }
-      .accent-stroke { stroke: #58a6ff; }
-      .grid-line { stroke: #30363d; }
-    }
-  </style>
-
-      <rect width="100%" height="100%" class="card-bg" rx="6" />
-      <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">IB-Integrated-Design-Project-Group-M202 Repository Pulse</text>
-      <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
-      <text x="550" y="42" class="text-sub" font-size="10">12 Month Activity</text>
-      <text x="780" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
-      
-      <text x="10" y="65" class="text-main" font-family="monospace" font-size="11">competition-in-arena</text>
-      <polyline points="550,70 563.6363636363636,70 577.2727272727273,70 590.9090909090909,70 604.5454545454545,70 618.1818181818182,70 631.8181818181818,70 645.4545454545455,70 659.0909090909091,70 672.7272727272727,70 686.3636363636364,70 700,70" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="65" class="text-sub" font-size="9" text-anchor="end">169</text>
+      <text x="10" y="65" fill="#f0f6fc" font-family="monospace" font-size="11">competition-in-arena</text>
+      <polyline points="550,70 563.6363636363636,70 577.2727272727273,70 590.9090909090909,70 604.5454545454545,70 618.1818181818182,70 631.8181818181818,70 645.4545454545455,70 659.0909090909091,70 672.7272727272727,70 686.3636363636364,70 700,70" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="65" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">169</text>
     
-      <text x="10" y="95" class="text-main" font-family="monospace" font-size="11">component-connection-status</text>
-      <polyline points="550,100 563.6363636363636,100 577.2727272727273,100 590.9090909090909,100 604.5454545454545,100 618.1818181818182,100 631.8181818181818,100 645.4545454545455,100 659.0909090909091,100 672.7272727272727,100 686.3636363636364,100 700,100" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="95" class="text-sub" font-size="9" text-anchor="end">81</text>
+      <text x="10" y="95" fill="#f0f6fc" font-family="monospace" font-size="11">component-connection-status</text>
+      <polyline points="550,100 563.6363636363636,100 577.2727272727273,100 590.9090909090909,100 604.5454545454545,100 618.1818181818182,100 631.8181818181818,100 645.4545454545455,100 659.0909090909091,100 672.7272727272727,100 686.3636363636364,100 700,100" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="95" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">81</text>
     
     </svg>
   

@@ -1,65 +1,47 @@
 
     <svg width="800" height="380" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
+      <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Branch Contribution</text>
       
-  <style>
-    .card-bg { fill: #ffffff; stroke: #d0d7de; }
-    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
-    .accent { fill: #0969da; }
-    .accent-stroke { stroke: #0969da; }
-    .grid-line { stroke: #d0d7de; }
-    @media (prefers-color-scheme: dark) {
-      .card-bg { fill: #0d1117; stroke: #30363d; }
-      .text-main { fill: #f0f6fc; }
-      .text-sub { fill: #8b949e; }
-      .accent { fill: #58a6ff; }
-      .accent-stroke { stroke: #58a6ff; }
-      .grid-line { stroke: #30363d; }
-    }
-  </style>
-
-      <rect width="100%" height="100%" class="card-bg" rx="10" />
-      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Branch Contribution</text>
-      
-      <text x="20" y="64" class="text-sub" font-family="monospace" font-size="12">www-refresh</text>
-      <rect x="150" y="50" width="550" height="20" class="accent" rx="4" />
-      <text x="710" y="64" class="text-sub" font-size="11">35410 commits</text>
+      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">www-refresh</text>
+      <rect x="150" y="50" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="790" y="64" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">35410 commits</text>
     
-      <text x="20" y="96" class="text-sub" font-family="monospace" font-size="12">website-preview</text>
-      <rect x="150" y="82" width="535.6636543349337" height="20" class="accent" rx="4" />
-      <text x="695.6636543349337" y="96" class="text-sub" font-size="11">34487 commits</text>
+      <text x="20" y="96" fill="#8b949e" font-family="monospace" font-size="12">website-preview</text>
+      <rect x="150" y="82" width="613.5783676927422" height="20" fill="#58a6ff" rx="4" />
+      <text x="773.5783676927422" y="96" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">34487 commits</text>
     
-      <text x="20" y="128" class="text-sub" font-family="monospace" font-size="12">wasm-modules-gu</text>
-      <rect x="150" y="114" width="468.5950296526405" height="20" class="accent" rx="4" />
-      <text x="628.5950296526405" y="128" class="text-sub" font-size="11">30169 commits</text>
+      <text x="20" y="128" fill="#8b949e" font-family="monospace" font-size="12">wasm-modules-gu</text>
+      <rect x="150" y="114" width="536.7543066930245" height="20" fill="#58a6ff" rx="4" />
+      <text x="696.7543066930245" y="128" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">30169 commits</text>
     
-      <text x="20" y="160" class="text-sub" font-family="monospace" font-size="12">w3b6x9/migratio</text>
-      <rect x="150" y="146" width="541.239762778876" height="20" class="accent" rx="4" />
-      <text x="701.239762778876" y="160" class="text-sub" font-size="11">34846 commits</text>
+      <text x="20" y="160" fill="#8b949e" font-family="monospace" font-size="12">w3b6x9/migratio</text>
+      <rect x="150" y="146" width="619.9655464558034" height="20" fill="#58a6ff" rx="4" />
+      <text x="779.9655464558034" y="160" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">34846 commits</text>
     
-      <text x="20" y="192" class="text-sub" font-family="monospace" font-size="12">views</text>
-      <rect x="150" y="178" width="452.0220276757978" height="20" class="accent" rx="4" />
-      <text x="612.0220276757977" y="192" class="text-sub" font-size="11">29102 commits</text>
+      <text x="20" y="192" fill="#8b949e" font-family="monospace" font-size="12">views</text>
+      <rect x="150" y="178" width="517.770686246823" height="20" fill="#58a6ff" rx="4" />
+      <text x="677.770686246823" y="192" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">29102 commits</text>
     
-      <text x="20" y="224" class="text-sub" font-family="monospace" font-size="12">vercel-marketpl</text>
-      <rect x="150" y="210" width="449.24173962157585" height="20" class="accent" rx="4" />
-      <text x="609.2417396215758" y="224" class="text-sub" font-size="11">28923 commits</text>
+      <text x="20" y="224" fill="#8b949e" font-family="monospace" font-size="12">vercel-marketpl</text>
+      <rect x="150" y="210" width="514.5859926574414" height="20" fill="#58a6ff" rx="4" />
+      <text x="674.5859926574414" y="224" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">28923 commits</text>
     
-      <text x="20" y="256" class="text-sub" font-family="monospace" font-size="12">v0/christopherw</text>
-      <rect x="150" y="242" width="541.5348771533465" height="20" class="accent" rx="4" />
-      <text x="701.5348771533465" y="256" class="text-sub" font-size="11">34865 commits</text>
+      <text x="20" y="256" fill="#8b949e" font-family="monospace" font-size="12">v0/christopherw</text>
+      <rect x="150" y="242" width="620.3035865574697" height="20" fill="#58a6ff" rx="4" />
+      <text x="780.3035865574697" y="256" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">34865 commits</text>
     
-      <text x="20" y="288" class="text-sub" font-family="monospace" font-size="12">v0/aldn-a0ede52</text>
-      <rect x="150" y="274" width="540.3388873199661" height="20" class="accent" rx="4" />
-      <text x="700.3388873199661" y="288" class="text-sub" font-size="11">34788 commits</text>
+      <text x="20" y="288" fill="#8b949e" font-family="monospace" font-size="12">v0/aldn-a0ede52</text>
+      <rect x="150" y="274" width="618.9336345665066" height="20" fill="#58a6ff" rx="4" />
+      <text x="778.9336345665066" y="288" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">34788 commits</text>
     
-      <text x="20" y="320" class="text-sub" font-family="monospace" font-size="12">updating-docs</text>
-      <rect x="150" y="306" width="372.5430669302457" height="20" class="accent" rx="4" />
-      <text x="532.5430669302457" y="320" class="text-sub" font-size="11">23985 commits</text>
+      <text x="20" y="320" fill="#8b949e" font-family="monospace" font-size="12">updating-docs</text>
+      <rect x="150" y="306" width="426.73114939282686" height="20" fill="#58a6ff" rx="4" />
+      <text x="586.7311493928269" y="320" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">23985 commits</text>
     
-      <text x="20" y="352" class="text-sub" font-family="monospace" font-size="12">updating-backup</text>
-      <rect x="150" y="338" width="547.7167466817283" height="20" class="accent" rx="4" />
-      <text x="707.7167466817283" y="352" class="text-sub" font-size="11">35263 commits</text>
+      <text x="20" y="352" fill="#8b949e" font-family="monospace" font-size="12">updating-backup</text>
+      <rect x="150" y="338" width="627.3846371081615" height="20" fill="#58a6ff" rx="4" />
+      <text x="787.3846371081615" y="352" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">35263 commits</text>
     
     </svg>
   
