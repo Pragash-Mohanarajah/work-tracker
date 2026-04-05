@@ -1,20 +1,38 @@
 
     <svg width="440" height="240" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="35" fill="#f0f6fc" font-family="sans-serif" font-size="16" font-weight="bold">Work by Domain</text>
-      <path d="M 200 130 A 80 80 0 1 1 118.25300860602948 50.01907714292494 L 118.90813037876843 80.01192321432808 A 50 50 0 1 0 170 130 Z" fill="#58a6ff" stroke="#0d1117" stroke-width="2" /><path d="M 118.25300860602948 50.01907714292494 A 80 80 0 0 1 193.69208011767833 98.86356912024632 L 166.05755007354895 110.53973070015395 A 50 50 0 0 0 118.90813037876843 80.01192321432808 Z" fill="#3fb950" stroke="#0d1117" stroke-width="2" /><path d="M 193.69208011767833 98.86356912024632 A 80 80 0 0 1 199.68754741191515 122.93637575505514 L 169.80471713244697 125.58523484690946 A 50 50 0 0 0 166.05755007354895 110.53973070015395 Z" fill="#f0883e" stroke="#0d1117" stroke-width="2" /><path d="M 199.68754741191515 122.93637575505514 A 80 80 0 0 1 200 129.99999999999997 L 170 130 A 50 50 0 0 0 169.80471713244697 125.58523484690946 Z" fill="#bc8cff" stroke="#0d1117" stroke-width="2" />
+      
+  <style>
+    .card-bg { fill: #ffffff; stroke: #d0d7de; }
+    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .accent { fill: #0969da; }
+    .accent-stroke { stroke: #0969da; }
+    .grid-line { stroke: #d0d7de; }
+    @media (prefers-color-scheme: dark) {
+      .card-bg { fill: #0d1117; stroke: #30363d; }
+      .text-main { fill: #f0f6fc; }
+      .text-sub { fill: #8b949e; }
+      .accent { fill: #58a6ff; }
+      .accent-stroke { stroke: #58a6ff; }
+      .grid-line { stroke: #30363d; }
+    }
+  </style>
+
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="35" class="text-main" font-size="16" font-weight="bold">Work by Domain</text>
+      <path d="M 200 130 A 80 80 0 1 1 118.24114461761444 50.01933716363777 L 118.90071538600903 80.01208572727361 A 50 50 0 1 0 170 130 Z" fill="#58a6ff" class="card-bg" stroke-width="2" /><path d="M 118.24114461761444 50.01933716363777 A 80 80 0 0 1 193.6925560045488 98.86469544847137 L 166.057847502843 110.5404346552946 A 50 50 0 0 0 118.90071538600907 80.01208572727361 Z" fill="#3fb950" class="card-bg" stroke-width="2" /><path d="M 193.6925560045488 98.86469544847137 A 80 80 0 0 1 199.6875712876461 122.93664511182405 L 169.8047320547788 125.58540319489003 A 50 50 0 0 0 166.057847502843 110.5404346552946 Z" fill="#f0883e" class="card-bg" stroke-width="2" /><path d="M 199.6875712876461 122.93664511182405 A 80 80 0 0 1 200 129.99999999999997 L 170 130 A 50 50 0 0 0 169.8047320547788 125.58540319489003 Z" fill="#bc8cff" class="card-bg" stroke-width="2" />
       
       <rect x="260" y="60" width="12" height="12" fill="#58a6ff" rx="3" />
-      <text x="280" y="70" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial" font-size="12">AI / ML</text>
+      <text x="280" y="70" class="text-sub" font-size="12">AI / ML</text>
     
       <rect x="260" y="82" width="12" height="12" fill="#3fb950" rx="3" />
-      <text x="280" y="92" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial" font-size="12">Other</text>
+      <text x="280" y="92" class="text-sub" font-size="12">Other</text>
     
       <rect x="260" y="104" width="12" height="12" fill="#f0883e" rx="3" />
-      <text x="280" y="114" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial" font-size="12">Web Apps</text>
+      <text x="280" y="114" class="text-sub" font-size="12">Web Apps</text>
     
       <rect x="260" y="126" width="12" height="12" fill="#bc8cff" rx="3" />
-      <text x="280" y="136" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial" font-size="12">Data Systems</text>
+      <text x="280" y="136" class="text-sub" font-size="12">Data Systems</text>
     
     </svg>
   

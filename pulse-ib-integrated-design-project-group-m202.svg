@@ -1,18 +1,36 @@
 
     <svg width="540" height="120" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="6" />
-      <text x="15" y="25" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f0f6fc">IB-Integrated-Design-Project-Group-M202 Repository Pulse</text>
-      <text x="15" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">Repository Name</text>
-      <text x="350" y="42" font-family="sans-serif" font-size="10" fill="#8b949e">12 Month Activity</text>
-      <text x="510" y="42" font-family="sans-serif" font-size="10" fill="#8b949e" text-anchor="end">Total</text>
       
-      <text x="10" y="65" fill="#c9d1d9" font-family="monospace" font-size="11">competition-in-arena</text>
-      <polyline points="350,70 363.6363636363636,70 377.27272727272725,70 390.9090909090909,70 404.54545454545456,70 418.1818181818182,70 431.8181818181818,70 445.45454545454544,70 459.0909090909091,70 472.72727272727275,70 486.3636363636364,70 500,70" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="510" y="65" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">169</text>
+  <style>
+    .card-bg { fill: #ffffff; stroke: #d0d7de; }
+    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .accent { fill: #0969da; }
+    .accent-stroke { stroke: #0969da; }
+    .grid-line { stroke: #d0d7de; }
+    @media (prefers-color-scheme: dark) {
+      .card-bg { fill: #0d1117; stroke: #30363d; }
+      .text-main { fill: #f0f6fc; }
+      .text-sub { fill: #8b949e; }
+      .accent { fill: #58a6ff; }
+      .accent-stroke { stroke: #58a6ff; }
+      .grid-line { stroke: #30363d; }
+    }
+  </style>
+
+      <rect width="100%" height="100%" class="card-bg" rx="6" />
+      <text x="15" y="25" class="text-main" font-size="14" font-weight="bold">IB-Integrated-Design-Project-Group-M202 Repository Pulse</text>
+      <text x="15" y="42" class="text-sub" font-size="10">Repository Name</text>
+      <text x="350" y="42" class="text-sub" font-size="10">12 Month Activity</text>
+      <text x="510" y="42" class="text-sub" font-size="10" text-anchor="end">Total</text>
+      
+      <text x="10" y="65" class="text-main" font-family="monospace" font-size="11">competition-in-arena</text>
+      <polyline points="350,70 363.6363636363636,70 377.27272727272725,70 390.9090909090909,70 404.54545454545456,70 418.1818181818182,70 431.8181818181818,70 445.45454545454544,70 459.0909090909091,70 472.72727272727275,70 486.3636363636364,70 500,70" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="65" class="text-sub" font-size="9" text-anchor="end">169</text>
     
-      <text x="10" y="95" fill="#c9d1d9" font-family="monospace" font-size="11">component-connection-status</text>
-      <polyline points="350,100 363.6363636363636,100 377.27272727272725,100 390.9090909090909,100 404.54545454545456,100 418.1818181818182,100 431.8181818181818,100 445.45454545454544,100 459.0909090909091,100 472.72727272727275,100 486.3636363636364,100 500,100" fill="none" stroke="#388bfd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="510" y="95" fill="#666" font-family="sans-serif" font-size="9" text-anchor="end">81</text>
+      <text x="10" y="95" class="text-main" font-family="monospace" font-size="11">component-connection-status</text>
+      <polyline points="350,100 363.6363636363636,100 377.27272727272725,100 390.9090909090909,100 404.54545454545456,100 418.1818181818182,100 431.8181818181818,100 445.45454545454544,100 459.0909090909091,100 472.72727272727275,100 486.3636363636364,100 500,100" fill="none" class="accent-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="510" y="95" class="text-sub" font-size="9" text-anchor="end">81</text>
     
     </svg>
   

@@ -1,4 +1,7 @@
 ## 🏢 Work & Organizational Tracker
+<p align="center">
+  <img src="./summary-card.svg" width="100%" />
+</p>
 Detailed breakdown of contributions across professional and personal entities.
 
 ### 📊 High-Level Metrics
@@ -7,11 +10,12 @@ Detailed breakdown of contributions across professional and personal entities.
   <img src="./org-distribution.svg" width="350" />
 </p>
 
-### 🕸️ Expertise & Domains
+### 🕸️ Expertise & Milestones
 <p align="center">
   <img src="./tech-radar.svg" width="400" />
-  <img src="./category-distribution.svg" width="400" />
+  <img src="./milestones.svg" width="450" />
 </p>
+<p align="center"><img src="./category-distribution.svg" width="400" /></p>
 
 ### ⏰ Working Rhythm
 <p align="center">
@@ -30,13 +34,13 @@ Detailed breakdown of contributions across professional and personal entities.
   <img src="./radar-pragash-mohanarajah.svg" width="350" />
 </p>
 
-##### 📦 work-tracker
-> Pragash's Internal Tracker for Work Related GitHub Activity
-<img src="./branch-Pragash-Mohanarajah-work-tracker.svg" width="500" />
-
 ##### 📦 portfolio
 > Pragash Mohanarajah: Personal Portfolio
 <img src="./branch-Pragash-Mohanarajah-portfolio.svg" width="500" />
+
+##### 📦 work-tracker
+> Pragash's Internal Tracker for Work Related GitHub Activity
+<img src="./branch-Pragash-Mohanarajah-work-tracker.svg" width="500" />
 
 ##### 📦 Pragash-Mohanarajah
 > My GitHub Profile

@@ -1,23 +1,41 @@
 
     <svg width="600" height="240" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">Workday Rhythm (Punch Card)</text>
-      <text x="30" y="55.42857142857143" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Sun</text><text x="30" y="78.28571428571429" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Mon</text><text x="30" y="101.14285714285715" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Tue</text><text x="30" y="124" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Wed</text><text x="30" y="146.85714285714286" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Thu</text><text x="30" y="169.7142857142857" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Fri</text><text x="30" y="192.57142857142856" text-anchor="end" fill="#8b949e" font-family="sans-serif" font-size="9">Sat</text>
-      <text x="50.833333333333336" y="215" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">0h</text><text x="180.83333333333334" y="215" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">6h</text><text x="310.8333333333333" y="215" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">12h</text><text x="440.8333333333333" y="215" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">18h</text><text x="549.1666666666667" y="215" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="9">23h</text>
       
-      <text x="370" y="224" fill="#8b949e" font-family="sans-serif" font-size="9">Commits:</text>
+  <style>
+    .card-bg { fill: #ffffff; stroke: #d0d7de; }
+    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .accent { fill: #0969da; }
+    .accent-stroke { stroke: #0969da; }
+    .grid-line { stroke: #d0d7de; }
+    @media (prefers-color-scheme: dark) {
+      .card-bg { fill: #0d1117; stroke: #30363d; }
+      .text-main { fill: #f0f6fc; }
+      .text-sub { fill: #8b949e; }
+      .accent { fill: #58a6ff; }
+      .accent-stroke { stroke: #58a6ff; }
+      .grid-line { stroke: #30363d; }
+    }
+  </style>
+
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Workday Rhythm (Punch Card)</text>
+      <text x="30" y="55.42857142857143" text-anchor="end" class="text-sub" font-size="9">Sun</text><text x="30" y="78.28571428571429" text-anchor="end" class="text-sub" font-size="9">Mon</text><text x="30" y="101.14285714285715" text-anchor="end" class="text-sub" font-size="9">Tue</text><text x="30" y="124" text-anchor="end" class="text-sub" font-size="9">Wed</text><text x="30" y="146.85714285714286" text-anchor="end" class="text-sub" font-size="9">Thu</text><text x="30" y="169.7142857142857" text-anchor="end" class="text-sub" font-size="9">Fri</text><text x="30" y="192.57142857142856" text-anchor="end" class="text-sub" font-size="9">Sat</text>
+      <text x="50.833333333333336" y="215" text-anchor="middle" class="text-sub" font-size="9">0h</text><text x="180.83333333333334" y="215" text-anchor="middle" class="text-sub" font-size="9">6h</text><text x="310.8333333333333" y="215" text-anchor="middle" class="text-sub" font-size="9">12h</text><text x="440.8333333333333" y="215" text-anchor="middle" class="text-sub" font-size="9">18h</text><text x="549.1666666666667" y="215" text-anchor="middle" class="text-sub" font-size="9">23h</text>
+      
+      <text x="370" y="224" class="text-sub" font-size="9">Commits:</text>
       
       <circle cx="420" cy="220" r="2.7083333333333335" fill="#7bc96f" opacity="0.8" />
-      <text x="432" y="224" fill="#666" font-family="sans-serif" font-size="9">0</text>
+      <text x="432" y="224" class="text-sub" font-size="9">0</text>
     
       <circle cx="460" cy="220" r="5.416666666666667" fill="#7bc96f" opacity="0.8" />
-      <text x="472" y="224" fill="#666" font-family="sans-serif" font-size="9">0</text>
+      <text x="472" y="224" class="text-sub" font-size="9">0</text>
     
       <circle cx="500" cy="220" r="8.125" fill="#7bc96f" opacity="0.8" />
-      <text x="512" y="224" fill="#666" font-family="sans-serif" font-size="9">0</text>
+      <text x="512" y="224" class="text-sub" font-size="9">0</text>
     
       <circle cx="540" cy="220" r="10.833333333333334" fill="#7bc96f" opacity="0.8" />
-      <text x="552" y="224" fill="#666" font-family="sans-serif" font-size="9">0</text>
+      <text x="552" y="224" class="text-sub" font-size="9">0</text>
     
     </svg>
   

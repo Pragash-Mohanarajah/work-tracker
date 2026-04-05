@@ -1,7 +1,65 @@
 
-    <svg width="540" height="60" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" rx="10" />
-      <text x="20" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">Branch Contribution</text>
+    <svg width="540" height="380" xmlns="http://www.w3.org/2000/svg">
       
+  <style>
+    .card-bg { fill: #ffffff; stroke: #d0d7de; }
+    .text-main { fill: #24292f; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .text-sub { fill: #57606a; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+    .accent { fill: #0969da; }
+    .accent-stroke { stroke: #0969da; }
+    .grid-line { stroke: #d0d7de; }
+    @media (prefers-color-scheme: dark) {
+      .card-bg { fill: #0d1117; stroke: #30363d; }
+      .text-main { fill: #f0f6fc; }
+      .text-sub { fill: #8b949e; }
+      .accent { fill: #58a6ff; }
+      .accent-stroke { stroke: #58a6ff; }
+      .grid-line { stroke: #30363d; }
+    }
+  </style>
+
+      <rect width="100%" height="100%" class="card-bg" rx="10" />
+      <text x="20" y="30" class="text-main" font-size="16" font-weight="bold">Branch Contribution</text>
+      
+      <text x="20" y="64" class="text-sub" font-family="monospace" font-size="12">ChrisChinchilla</text>
+      <rect x="150" y="50" width="340.16421195192146" height="20" class="accent" rx="4" />
+      <text x="500.16421195192146" y="64" class="text-sub" font-size="11">34446 commits</text>
+    
+      <text x="20" y="96" class="text-sub" font-family="monospace" font-size="12">GiantPineappleS</text>
+      <rect x="150" y="82" width="227.87229840302467" height="20" class="accent" rx="4" />
+      <text x="387.8722984030247" y="96" class="text-sub" font-size="11">23075 commits</text>
+    
+      <text x="20" y="128" class="text-sub" font-family="monospace" font-size="12">PLyn/migrate-gu</text>
+      <rect x="150" y="114" width="343.1564245810056" height="20" class="accent" rx="4" />
+      <text x="503.1564245810056" y="128" class="text-sub" font-size="11">34749 commits</text>
+    
+      <text x="20" y="160" class="text-sub" font-family="monospace" font-size="12">PLyn/storage-do</text>
+      <rect x="150" y="146" width="338.80142204164554" height="20" class="accent" rx="4" />
+      <text x="498.80142204164554" y="160" class="text-sub" font-size="11">34308 commits</text>
+    
+      <text x="20" y="192" class="text-sub" font-family="monospace" font-size="12">PLyn/update-mig</text>
+      <rect x="150" y="178" width="319.3174764403815" height="20" class="accent" rx="4" />
+      <text x="479.3174764403815" y="192" class="text-sub" font-size="11">32335 commits</text>
+    
+      <text x="20" y="224" class="text-sub" font-family="monospace" font-size="12">SaxonF/data-api</text>
+      <rect x="150" y="210" width="340.85548219626435" height="20" class="accent" rx="4" />
+      <text x="500.85548219626435" y="224" class="text-sub" font-size="11">34516 commits</text>
+    
+      <text x="20" y="256" class="text-sub" font-family="monospace" font-size="12">TheOtherBrian1-</text>
+      <rect x="150" y="242" width="266.5044297725862" height="20" class="accent" rx="4" />
+      <text x="426.5044297725862" y="256" class="text-sub" font-size="11">26987 commits</text>
+    
+      <text x="20" y="288" class="text-sub" font-family="monospace" font-size="12">TheOtherBrian1-</text>
+      <rect x="150" y="274" width="350" height="20" class="accent" rx="4" />
+      <text x="510" y="288" class="text-sub" font-size="11">35442 commits</text>
+    
+      <text x="20" y="320" class="text-sub" font-family="monospace" font-size="12">TheOtherBrian1-</text>
+      <rect x="150" y="306" width="317.34241859940187" height="20" class="accent" rx="4" />
+      <text x="477.34241859940187" y="320" class="text-sub" font-size="11">32135 commits</text>
+    
+      <text x="20" y="352" class="text-sub" font-family="monospace" font-size="12">TheOtherBrian1-</text>
+      <rect x="150" y="338" width="316.92765645279616" height="20" class="accent" rx="4" />
+      <text x="476.92765645279616" y="352" class="text-sub" font-size="11">32093 commits</text>
+    
     </svg>
   
