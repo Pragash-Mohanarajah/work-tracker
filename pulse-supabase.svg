@@ -1,13 +1,12 @@
 
-    <svg width="800" height="90" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="6" />
+    <svg width="800" height="105" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="10" />
       <text x="15" y="25" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">supabase Repository Pulse</text>
-      <text x="15" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Repository Name</text>
-      <text x="550" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">12 Month Activity</text>
-      <text x="780" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="end">Total</text>
+      <line x1="15" y1="38" x2="785" y2="38" stroke="#30363d" stroke-width="1" />
       
-      <text x="10" y="65" fill="#f0f6fc" font-family="monospace" font-size="11">supabase</text>
-      <polyline points="550,70 563.6363636363636,70 577.2727272727273,70 590.9090909090909,70 604.5454545454545,70 618.1818181818182,70 631.8181818181818,70 645.4545454545455,70 659.0909090909091,70 672.7272727272727,70 686.3636363636364,70 700,70" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="15" y="70" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">supabase</text>
+      <text x="15" y="84" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,75 558.1818181818181,75 576.3636363636364,75 594.5454545454545,75 612.7272727272727,75 630.9090909090909,75 649.0909090909091,75 667.2727272727273,75 685.4545454545455,75 703.6363636363636,75 721.8181818181819,75 740,75" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="65" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
     </svg>

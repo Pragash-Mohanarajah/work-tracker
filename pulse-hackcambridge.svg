@@ -1,78 +1,93 @@
 
-    <svg width="800" height="570" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="6" />
+    <svg width="800" height="825" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="10" />
       <text x="15" y="25" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">hackcambridge Repository Pulse</text>
-      <text x="15" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Repository Name</text>
-      <text x="550" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">12 Month Activity</text>
-      <text x="780" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="end">Total</text>
+      <line x1="15" y1="38" x2="785" y2="38" stroke="#30363d" stroke-width="1" />
       
-      <text x="10" y="65" fill="#f0f6fc" font-family="monospace" font-size="11">hc-archive</text>
-      <polyline points="550,70 563.6363636363636,70 577.2727272727273,70 590.9090909090909,70 604.5454545454545,70 618.1818181818182,70 631.8181818181818,70 645.4545454545455,70 659.0909090909091,70 672.7272727272727,70 686.3636363636364,70 700,70" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="15" y="70" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-archive</text>
+      <text x="15" y="84" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,75 558.1818181818181,75 576.3636363636364,75 594.5454545454545,75 612.7272727272727,75 630.9090909090909,75 649.0909090909091,75 667.2727272727273,75 685.4545454545455,75 703.6363636363636,75 721.8181818181819,75 740,75" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="65" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="95" fill="#f0f6fc" font-family="monospace" font-size="11">hc-foundation</text>
-      <polyline points="550,100 563.6363636363636,100 577.2727272727273,100 590.9090909090909,100 604.5454545454545,100 618.1818181818182,100 631.8181818181818,100 645.4545454545455,100 659.0909090909091,100 672.7272727272727,100 686.3636363636364,100 700,100" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="95" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">21</text>
+      <text x="15" y="115" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-foundation</text>
+      <text x="15" y="129" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,120 558.1818181818181,120 576.3636363636364,120 594.5454545454545,120 612.7272727272727,120 630.9090909090909,120 649.0909090909091,120 667.2727272727273,120 685.4545454545455,120 703.6363636363636,120 721.8181818181819,120 740,120" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="110" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">21</text>
     
-      <text x="10" y="125" fill="#f0f6fc" font-family="monospace" font-size="11">hc-foundation-lite</text>
-      <polyline points="550,130 563.6363636363636,130 577.2727272727273,130 590.9090909090909,130 604.5454545454545,130 618.1818181818182,130 631.8181818181818,130 645.4545454545455,130 659.0909090909091,130 672.7272727272727,130 686.3636363636364,130 700,130" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="125" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">37</text>
+      <text x="15" y="160" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-foundation-lite</text>
+      <text x="15" y="174" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,165 558.1818181818181,165 576.3636363636364,165 594.5454545454545,165 612.7272727272727,165 630.9090909090909,165 649.0909090909091,165 667.2727272727273,165 685.4545454545455,165 703.6363636363636,165 721.8181818181819,165 740,165" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="155" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">37</text>
     
-      <text x="10" y="155" fill="#f0f6fc" font-family="monospace" font-size="11">hc-2023-spyder</text>
-      <polyline points="550,160 563.6363636363636,160 577.2727272727273,160 590.9090909090909,160 604.5454545454545,160 618.1818181818182,160 631.8181818181818,160 645.4545454545455,160 659.0909090909091,160 672.7272727272727,160 686.3636363636364,160 700,160" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="155" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">30</text>
+      <text x="15" y="205" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-2023-spyder</text>
+      <text x="15" y="219" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,210 558.1818181818181,210 576.3636363636364,210 594.5454545454545,210 612.7272727272727,210 630.9090909090909,210 649.0909090909091,210 667.2727272727273,210 685.4545454545455,210 703.6363636363636,210 721.8181818181819,210 740,210" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="200" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">30</text>
     
-      <text x="10" y="185" fill="#f0f6fc" font-family="monospace" font-size="11">hc-2020-prototype</text>
-      <polyline points="550,190 563.6363636363636,190 577.2727272727273,190 590.9090909090909,190 604.5454545454545,190 618.1818181818182,190 631.8181818181818,190 645.4545454545455,190 659.0909090909091,190 672.7272727272727,190 686.3636363636364,190 700,190" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="185" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">91</text>
+      <text x="15" y="250" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-2020-prototype</text>
+      <text x="15" y="264" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,255 558.1818181818181,255 576.3636363636364,255 594.5454545454545,255 612.7272727272727,255 630.9090909090909,255 649.0909090909091,255 667.2727272727273,255 685.4545454545455,255 703.6363636363636,255 721.8181818181819,255 740,255" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="245" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">91</text>
     
-      <text x="10" y="215" fill="#f0f6fc" font-family="monospace" font-size="11">hc-2019-4d</text>
-      <polyline points="550,220 563.6363636363636,220 577.2727272727273,220 590.9090909090909,220 604.5454545454545,220 618.1818181818182,220 631.8181818181818,220 645.4545454545455,220 659.0909090909091,220 672.7272727272727,220 686.3636363636364,220 700,220" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="215" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+      <text x="15" y="295" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-2019-4d</text>
+      <text x="15" y="309" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,300 558.1818181818181,300 576.3636363636364,300 594.5454545454545,300 612.7272727272727,300 630.9090909090909,300 649.0909090909091,300 667.2727272727273,300 685.4545454545455,300 703.6363636363636,300 721.8181818181819,300 740,300" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="290" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="245" fill="#f0f6fc" font-family="monospace" font-size="11">hc-2022-atlas</text>
-      <polyline points="550,250 563.6363636363636,250 577.2727272727273,250 590.9090909090909,250 604.5454545454545,250 618.1818181818182,250 631.8181818181818,250 645.4545454545455,250 659.0909090909091,250 672.7272727272727,250 686.3636363636364,250 700,250" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="245" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
-    
-      <text x="10" y="275" fill="#f0f6fc" font-family="monospace" font-size="11">hc2022-shared-files</text>
-      <polyline points="550,280 563.6363636363636,280 577.2727272727273,280 590.9090909090909,280 604.5454545454545,280 618.1818181818182,280 631.8181818181818,280 645.4545454545455,280 659.0909090909091,280 672.7272727272727,280 686.3636363636364,280 700,280" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="275" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
-    
-      <text x="10" y="305" fill="#f0f6fc" font-family="monospace" font-size="11">gavel</text>
-      <polyline points="550,310 563.6363636363636,310 577.2727272727273,310 590.9090909090909,310 604.5454545454545,310 618.1818181818182,310 631.8181818181818,310 645.4545454545455,310 659.0909090909091,310 672.7272727272727,310 686.3636363636364,310 700,310" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="305" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
-    
-      <text x="10" y="335" fill="#f0f6fc" font-family="monospace" font-size="11">hc-applications</text>
-      <polyline points="550,340 563.6363636363636,340 577.2727272727273,340 590.9090909090909,340 604.5454545454545,340 618.1818181818182,340 631.8181818181818,340 645.4545454545455,340 659.0909090909091,340 672.7272727272727,340 686.3636363636364,340 700,340" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="15" y="340" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-2022-atlas</text>
+      <text x="15" y="354" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,345 558.1818181818181,345 576.3636363636364,345 594.5454545454545,345 612.7272727272727,345 630.9090909090909,345 649.0909090909091,345 667.2727272727273,345 685.4545454545455,345 703.6363636363636,345 721.8181818181819,345 740,345" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="335" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="365" fill="#f0f6fc" font-family="monospace" font-size="11">hc-sponsors-portal</text>
-      <polyline points="550,370 563.6363636363636,370 577.2727272727273,370 590.9090909090909,370 604.5454545454545,370 618.1818181818182,370 631.8181818181818,370 645.4545454545455,370 659.0909090909091,370 672.7272727272727,370 686.3636363636364,370 700,370" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="365" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+      <text x="15" y="385" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc2022-shared-files</text>
+      <text x="15" y="399" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,390 558.1818181818181,390 576.3636363636364,390 594.5454545454545,390 612.7272727272727,390 630.9090909090909,390 649.0909090909091,390 667.2727272727273,390 685.4545454545455,390 703.6363636363636,390 721.8181818181819,390 740,390" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="380" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="395" fill="#f0f6fc" font-family="monospace" font-size="11">camvscovid-issues</text>
-      <polyline points="550,400 563.6363636363636,400 577.2727272727273,400 590.9090909090909,400 604.5454545454545,400 618.1818181818182,400 631.8181818181818,400 645.4545454545455,400 659.0909090909091,400 672.7272727272727,400 686.3636363636364,400 700,400" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="395" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
-    
-      <text x="10" y="425" fill="#f0f6fc" font-family="monospace" font-size="11">live.hackcambridge.com</text>
-      <polyline points="550,430 563.6363636363636,430 577.2727272727273,430 590.9090909090909,430 604.5454545454545,430 618.1818181818182,430 631.8181818181818,430 645.4545454545455,430 659.0909090909091,430 672.7272727272727,430 686.3636363636364,430 700,430" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="15" y="430" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">gavel</text>
+      <text x="15" y="444" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,435 558.1818181818181,435 576.3636363636364,435 594.5454545454545,435 612.7272727272727,435 630.9090909090909,435 649.0909090909091,435 667.2727272727273,435 685.4545454545455,435 703.6363636363636,435 721.8181818181819,435 740,435" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="425" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="455" fill="#f0f6fc" font-family="monospace" font-size="11">polaris-tokens</text>
-      <polyline points="550,460 563.6363636363636,460 577.2727272727273,460 590.9090909090909,460 604.5454545454545,460 618.1818181818182,460 631.8181818181818,460 645.4545454545455,460 659.0909090909091,460 672.7272727272727,460 686.3636363636364,460 700,460" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="455" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+      <text x="15" y="475" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-applications</text>
+      <text x="15" y="489" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,480 558.1818181818181,480 576.3636363636364,480 594.5454545454545,480 612.7272727272727,480 630.9090909090909,480 649.0909090909091,480 667.2727272727273,480 685.4545454545455,480 703.6363636363636,480 721.8181818181819,480 740,480" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="470" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="485" fill="#f0f6fc" font-family="monospace" font-size="11">hc-sponsorship-portal-scripts</text>
-      <polyline points="550,490 563.6363636363636,490 577.2727272727273,490 590.9090909090909,490 604.5454545454545,490 618.1818181818182,490 631.8181818181818,490 645.4545454545455,490 659.0909090909091,490 672.7272727272727,490 686.3636363636364,490 700,490" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="485" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
-    
-      <text x="10" y="515" fill="#f0f6fc" font-family="monospace" font-size="11">HELPq</text>
-      <polyline points="550,520 563.6363636363636,520 577.2727272727273,520 590.9090909090909,520 604.5454545454545,520 618.1818181818182,520 631.8181818181818,520 645.4545454545455,520 659.0909090909091,520 672.7272727272727,520 686.3636363636364,520 700,520" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="15" y="520" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-sponsors-portal</text>
+      <text x="15" y="534" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,525 558.1818181818181,525 576.3636363636364,525 594.5454545454545,525 612.7272727272727,525 630.9090909090909,525 649.0909090909091,525 667.2727272727273,525 685.4545454545455,525 703.6363636363636,525 721.8181818181819,525 740,525" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="515" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
-      <text x="10" y="545" fill="#f0f6fc" font-family="monospace" font-size="11">fractals</text>
-      <polyline points="550,550 563.6363636363636,550 577.2727272727273,550 590.9090909090909,550 604.5454545454545,550 618.1818181818182,550 631.8181818181818,550 645.4545454545455,550 659.0909090909091,550 672.7272727272727,550 686.3636363636364,550 700,550" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="545" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+      <text x="15" y="565" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">camvscovid-issues</text>
+      <text x="15" y="579" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,570 558.1818181818181,570 576.3636363636364,570 594.5454545454545,570 612.7272727272727,570 630.9090909090909,570 649.0909090909091,570 667.2727272727273,570 685.4545454545455,570 703.6363636363636,570 721.8181818181819,570 740,570" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="560" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="15" y="610" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">live.hackcambridge.com</text>
+      <text x="15" y="624" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,615 558.1818181818181,615 576.3636363636364,615 594.5454545454545,615 612.7272727272727,615 630.9090909090909,615 649.0909090909091,615 667.2727272727273,615 685.4545454545455,615 703.6363636363636,615 721.8181818181819,615 740,615" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="605" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="15" y="655" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">polaris-tokens</text>
+      <text x="15" y="669" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,660 558.1818181818181,660 576.3636363636364,660 594.5454545454545,660 612.7272727272727,660 630.9090909090909,660 649.0909090909091,660 667.2727272727273,660 685.4545454545455,660 703.6363636363636,660 721.8181818181819,660 740,660" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="650" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="15" y="700" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">hc-sponsorship-portal-scripts</text>
+      <text x="15" y="714" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,705 558.1818181818181,705 576.3636363636364,705 594.5454545454545,705 612.7272727272727,705 630.9090909090909,705 649.0909090909091,705 667.2727272727273,705 685.4545454545455,705 703.6363636363636,705 721.8181818181819,705 740,705" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="695" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="15" y="745" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">HELPq</text>
+      <text x="15" y="759" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,750 558.1818181818181,750 576.3636363636364,750 594.5454545454545,750 612.7272727272727,750 630.9090909090909,750 649.0909090909091,750 667.2727272727273,750 685.4545454545455,750 703.6363636363636,750 721.8181818181819,750 740,750" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="740" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
+    
+      <text x="15" y="790" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">fractals</text>
+      <text x="15" y="804" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <polyline points="540,795 558.1818181818181,795 576.3636363636364,795 594.5454545454545,795 612.7272727272727,795 630.9090909090909,795 649.0909090909091,795 667.2727272727273,795 685.4545454545455,795 703.6363636363636,795 721.8181818181819,795 740,795" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="785" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">0</text>
     
     </svg>
   
