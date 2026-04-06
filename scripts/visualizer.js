@@ -74,21 +74,22 @@ function generateBranchActivitySvg(branches) {
   if (!branches || branches.length === 0) {
     return `
       <svg width="${width}" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="10" />
+        <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" stroke-width="1" rx="10" />
         <text x="50%" y="50%" text-anchor="middle" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12">Branch commit breakdown not available for this project</text>
       </svg>
     `;
   }
 
   const maxCommits = Math.max(...branches.map(b => b.commits), 1);
+  const nameWidth = 220; // Increased space for names
 
   const rows = branches.map((branch, i) => {
     const y = 50 + i * (barHeight + gap);
-    const barWidth = (branch.commits / maxCommits) * (width - 170); // Adjust bar width dynamically
+    const barWidth = (branch.commits / maxCommits) * (width - nameWidth - 80);
     return `
-      <text x="20" y="${y + 14}" fill="${TEXT_SUB}" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
-      <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" fill="${ACCENT_PRIMARY}" rx="4" />
-      <text x="${160 + barWidth}" y="${y + 14}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">${branch.commits} commits</text>
+      <text x="20" y="${y + 14}" fill="${TEXT_MAIN}" font-family="monospace" font-size="11">${branch.name}</text>
+      <rect x="${nameWidth}" y="${y}" width="${barWidth}" height="${barHeight}" fill="${ACCENT_PRIMARY}" rx="4" />
+      <text x="${nameWidth + barWidth + 10}" y="${y + 14}" fill="${TEXT_SUB}" font-family="sans-serif" font-size="10">${branch.commits}</text>
     `;
   });
 
@@ -241,23 +242,29 @@ function generateTopContributorsSvg(contributors, title = "Top Contributors") {
  */
 function generateOrgSparklinesSvg(repos, orgName) {
   const width = 800; // Full width
-  const rowHeight = 30;
+  const rowHeight = 45; // Increased height to prevent overlap
   const height = repos.length * rowHeight + 60;
 
   const rows = repos.map((repo, i) => {
     const y = 50 + i * rowHeight;
     const activity = repo.monthlyActivity || Array(12).fill(0);
     const maxAct = Math.max(...activity, 1);
+    const sparklineWidth = 200;
+    const sparklineX = width - sparklineWidth - 60;
     
-    // Generate sparkline path
+    // Generate sparkline path with normalization
     const points = activity.map((val, j) => {
-      const px = width - 250 + (j * (150 / 11)); // Adjusted x for sparkline
-      const py = y + 20 - (val / maxAct) * 15;
+      const px = sparklineX + (j * (sparklineWidth / 11));
+      const py = y + 25 - (val / maxAct) * 20;
       return `${px},${py}`;
     }).join(" ");
 
+    const health = repo.healthScore || 0;
+    const healthColor = health > 70 ? ACCENT_SECONDARY : health > 30 ? ACCENT_ORANGE : ACCENT_RED;
+
     return `
-      <text x="10" y="${y + 15}" fill="${TEXT_MAIN}" font-family="monospace" font-size="11">${repo.name.slice(0, 35)}</text>
+      <text x="15" y="${y + 20}" fill="${TEXT_MAIN}" font-family="monospace" font-size="12" font-weight="600">${repo.name}</text>
+      <text x="15" y="${y + 34}" fill="${healthColor}" font-family="sans-serif" font-size="9" font-weight="bold">Health: ${health}%</text>
       <polyline points="${points}" fill="none" stroke="${ACCENT_PRIMARY}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="${width - 20}" y="${y + 15}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">${repo.totalCommits}</text>
     `;
@@ -265,11 +272,9 @@ function generateOrgSparklinesSvg(repos, orgName) {
 
   return `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" rx="6" />
+      <rect width="100%" height="100%" fill="${CARD_BG}" stroke="${CARD_BORDER}" stroke-width="1" rx="10" />
       <text x="15" y="25" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">${orgName} Repository Pulse</text>
-      <text x="15" y="42" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">Repository Name</text>
-      <text x="${width - 250}" y="42" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">12 Month Activity</text>
-      <text x="${width - 20}" y="42" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="end">Total</text>
+      <line x1="15" y1="38" x2="${width - 15}" y2="38" stroke="${GRID_LINE}" stroke-width="1" />
       ${rows.join("")}
     </svg>
   `;
@@ -439,8 +444,8 @@ function generateMilestonesSvg(milestones) {
   const rows = milestones.map((m, i) => {
     const y = 60 + (i * 22);
     return `
-      <circle cx="30" cy="${y - 4}" r="3" fill="${ACCENT_PRIMARY}" />
-      <text x="45" y="${y}" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">${m.repo.split('/').pop()}</text>
+      <circle cx="25" cy="${y - 4}" r="3" fill="${ACCENT_PRIMARY}" />
+      <text x="40" y="${y}" fill="${TEXT_MAIN}" font-family="monospace" font-size="11" font-weight="500">${m.repo.split('/').pop()}</text>
       <text x="${width - 20}" y="${y}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">${m.level}+ commits</text>
     `;
   });
