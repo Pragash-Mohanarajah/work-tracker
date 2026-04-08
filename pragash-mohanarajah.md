@@ -8,13 +8,13 @@
 
 ### 📦 Key Projects
 
-#### 📦 work-tracker
-> Pragash's Internal Tracker for Work Related GitHub Activity
-<p align="center"><img src="./branch-pragash-mohanarajah-work-tracker.svg" width="800" alt="Branch Activity for work-tracker" /></p>
-
 #### 📦 portfolio
 > Pragash Mohanarajah: Personal Portfolio
 <p align="center"><img src="./branch-pragash-mohanarajah-portfolio.svg" width="800" alt="Branch Activity for portfolio" /></p>
+
+#### 📦 work-tracker
+> Pragash's Internal Tracker for Work Related GitHub Activity
+<p align="center"><img src="./branch-pragash-mohanarajah-work-tracker.svg" width="800" alt="Branch Activity for work-tracker" /></p>
 
 #### 📦 Pragash-Mohanarajah
 > My GitHub Profile

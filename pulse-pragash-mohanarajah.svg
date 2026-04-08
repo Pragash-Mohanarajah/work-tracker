@@ -4,15 +4,15 @@
       <text x="15" y="25" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="bold">Pragash-Mohanarajah Repository Pulse</text>
       <line x1="15" y1="38" x2="785" y2="38" stroke="#30363d" stroke-width="1" />
       
-      <text x="15" y="70" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">work-tracker</text>
+      <text x="15" y="70" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">portfolio</text>
       <text x="15" y="84" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
-      <polyline points="540,75 558.1818181818181,75 576.3636363636364,75 594.5454545454545,75 612.7272727272727,75 630.9090909090909,75 649.0909090909091,75 667.2727272727273,75 685.4545454545455,75 703.6363636363636,75 721.8181818181819,75 740,55" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="65" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">33</text>
+      <polyline points="540,75 558.1818181818181,75 576.3636363636364,75 594.5454545454545,75 612.7272727272727,75 630.9090909090909,75 649.0909090909091,75 667.2727272727273,74.58333333333333 685.4545454545455,75 703.6363636363636,73.64583333333333 721.8181818181819,55 740,71.97916666666667" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="65" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">244</text>
     
-      <text x="15" y="115" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">portfolio</text>
+      <text x="15" y="115" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">work-tracker</text>
       <text x="15" y="129" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
-      <polyline points="540,120 558.1818181818181,120 576.3636363636364,120 594.5454545454545,120 612.7272727272727,120 630.9090909090909,120 649.0909090909091,120 667.2727272727273,119.58333333333333 685.4545454545455,120 703.6363636363636,118.54166666666667 721.8181818181819,100 740,117.08333333333333" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="110" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">243</text>
+      <polyline points="540,120 558.1818181818181,120 576.3636363636364,120 594.5454545454545,120 612.7272727272727,120 630.9090909090909,120 649.0909090909091,120 667.2727272727273,120 685.4545454545455,120 703.6363636363636,120 721.8181818181819,120 740,100" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="110" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">33</text>
     
       <text x="15" y="160" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">Pragash-Mohanarajah</text>
       <text x="15" y="174" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
