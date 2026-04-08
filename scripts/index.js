@@ -52,6 +52,9 @@ async function runTracker() {
     // Determine top languages for each organization
     console.log("🧮 Aggregating organization metrics...");
     orgMap.forEach(org => {
+      // Sort repositories within the organization by activity before finalizing
+      org.repos.sort((a, b) => b.totalCommits - a.totalCommits);
+
       org.topLanguages = Object.entries(org.languages)
         .sort(([, bytesA], [, bytesB]) => bytesB - bytesA)
         .slice(0, 3)
