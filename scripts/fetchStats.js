@@ -49,22 +49,24 @@ async function fetchStats() {
   // 2. Fetch Year Stats iteratively
   for (let year = currentYear; year >= startYear; year--) {
     // eslint-disable-next-line no-console
-    console.log(`Fetching contributions for ${year}...`)
+    const body = JSON.stringify(currentData);
+    console.log(`Fetching contributions for ${year}... (Payload: ${(body.length / 1024).toFixed(1)} KB)`)
     const res = await fetchWithRetry(`${url}?mode=year&year=${year}`, {
       method: "POST",
       headers,
-      body: JSON.stringify(currentData),
+      body,
     })
     currentData = await res.json()
   }
 
   // 3. Save Final Stats
   // eslint-disable-next-line no-console
-  console.log("Saving aggregated stats...")
+  const finalBody = JSON.stringify(currentData);
+  console.log(`Saving aggregated stats... (Final Payload: ${(finalBody.length / 1024).toFixed(1)} KB)`)
   const finalRes = await fetchWithRetry(`${url}?mode=save`, {
     method: "POST",
     headers,
-    body: JSON.stringify(currentData),
+    body: finalBody,
   })
   currentData = await finalRes.json()
 

@@ -22,6 +22,11 @@ async function runTracker() {
   
   try {
     const rawData = await fetchStats();
+    
+    if (!rawData || !rawData.repositories || !rawData.repositories.projects) {
+      throw new Error("Synchronization failed: Missing 'repositories' or 'projects' in aggregated data. This often indicates a server-side truncation or request body size limit being hit.");
+    }
+
     console.log(`📦 Received data for ${rawData.repositories.projects.length} projects`);
 
     // Group repositories by Organization (Owner) for the tracker view
