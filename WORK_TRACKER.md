@@ -26,5 +26,3 @@ Detailed breakdown of contributions across professional and personal entities.
 <p align="center">
   <img src="./weekly-activity.svg" width="395" alt="Weekly Contribution Intensity" />
 </p>
-
----
