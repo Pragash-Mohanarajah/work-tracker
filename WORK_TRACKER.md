@@ -26,3 +26,13 @@ Detailed breakdown of contributions across professional and personal entities.
 <p align="center">
   <img src="./weekly-activity.svg" width="395" alt="Weekly Contribution Intensity" />
 </p>
+
+---
+### 🏛️ Organization Reports
+Explore detailed metrics for each organization:
+- **Pragash-Mohanarajah** — _59 repositories_
+- **AxiaFunder** — _3 repositories_
+- **IB-Integrated-Design-Project-Group-M202** — _2 repositories_
+- **hackcambridge** — _17 repositories_
+- **supabase** — _1 repositories_
+- **Can3D-GenAI-Hackathon-Cambridge** — _1 repositories_

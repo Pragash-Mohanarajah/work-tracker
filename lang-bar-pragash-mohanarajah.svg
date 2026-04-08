@@ -2,7 +2,7 @@
     <svg width="800" height="100" xmlns="http://www.w3.org/2000/svg">
       <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
       <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Pragash-Mohanarajah Tech Mix</text>
-      <rect x="20" y="50" width="329.76579991302617" height="12" fill="#58a6ff" /><rect x="349.76579991302617" y="50" width="105.72026330529246" height="12" fill="#3fb950" /><rect x="455.48606321831863" y="50" width="72.49109221434625" height="12" fill="#f0883e" /><rect x="527.9771554326649" y="50" width="59.20537253461109" height="12" fill="#bc8cff" /><rect x="587.182527967276" y="50" width="53.42112701354719" height="12" fill="#ff7b72" /><rect x="640.6036549808232" y="50" width="31.272180930234732" height="12" fill="#6e7681" />
+      <rect x="20" y="50" width="329.74760181696445" height="12" fill="#58a6ff" /><rect x="349.74760181696445" y="50" width="105.71442914205358" height="12" fill="#3fb950" /><rect x="455.462030959018" y="50" width="72.48709179993068" height="12" fill="#f0883e" /><rect x="527.9491227589488" y="50" width="59.230907589402676" height="12" fill="#bc8cff" /><rect x="587.1800303483515" y="50" width="53.418178973449116" height="12" fill="#ff7b72" /><rect x="640.5982093218006" y="50" width="31.283593411545194" height="12" fill="#6e7681" />
       
       <circle cx="20" cy="80" r="4" fill="#58a6ff" />
       <text x="30" y="83" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10">C 43.4%</text>
