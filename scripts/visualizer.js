@@ -80,15 +80,16 @@ function generateBranchActivitySvg(branches) {
     `;
   }
 
-  const maxCommits = Math.max(...branches.map(b => b.commits), 1);
+  const sortedBranches = [...branches].sort((a, b) => b.commits - a.commits);
+  const maxCommits = Math.max(...sortedBranches.map(b => b.commits), 1);
 
-  const rows = branches.map((branch, i) => {
+  const rows = sortedBranches.map((branch, i) => {
     const y = 50 + i * (barHeight + gap);
     const barWidth = (branch.commits / maxCommits) * (width - 170); // Adjust bar width dynamically
     return `
       <text x="20" y="${y + 14}" fill="${TEXT_SUB}" font-family="monospace" font-size="12">${branch.name.slice(0, 15)}</text>
       <rect x="150" y="${y}" width="${barWidth}" height="${barHeight}" fill="${ACCENT_PRIMARY}" rx="4" />
-      <text x="${160 + barWidth}" y="${y + 14}" fill="${TEXT_SUB}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">${branch.commits} commits</text>
+      <text x="${155}" y="${y + 14}" fill="${TEXT_MAIN}" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">${branch.commits} commits</text>
     `;
   });
 
