@@ -22,6 +22,7 @@ async function runTracker() {
   
   try {
     const rawData = await fetchStats();
+    console.log(`📦 Received data for ${rawData.repositories.projects.length} projects`);
 
     // Group repositories by Organization (Owner) for the tracker view
     const orgMap = new Map();
@@ -49,6 +50,7 @@ async function runTracker() {
     });
 
     // Determine top languages for each organization
+    console.log("🧮 Aggregating organization metrics...");
     orgMap.forEach(org => {
       org.topLanguages = Object.entries(org.languages)
         .sort(([, bytesA], [, bytesB]) => bytesB - bytesA)
@@ -60,6 +62,7 @@ async function runTracker() {
       ...rawData,
       organizations: Array.from(orgMap.values()).sort((a, b) => b.totalCommits - a.totalCommits)
     };
+    console.log(`🏛️  Processed ${data.organizations.length} organizations`);
 
     // 0. Generate Summary Card
     const summaryStats = {
@@ -70,6 +73,7 @@ async function runTracker() {
     };
     const summarySvg = generateSummaryCardSvg(summaryStats);
     fs.writeFileSync(path.resolve(process.cwd(), "summary-card.svg"), summarySvg);
+    console.log("🖼️  Generated summary-card.svg");
 
     // 0.1 Generate Milestones
     const milestoneLevels = [1000, 500, 250, 100, 50, 10];
@@ -84,13 +88,16 @@ async function runTracker() {
       .slice(0, 5);
     const milestoneSvg = generateMilestonesSvg(milestones);
     fs.writeFileSync(path.resolve(process.cwd(), "milestones.svg"), milestoneSvg);
+    console.log(`🏆 Generated milestones.svg with ${milestones.length} entries`);
 
     // --- GENERATE GRAPHICS ---
+    console.log("🎨 Generating global charts...");
     
     // 1. Generate Org Distribution Chart
     const orgData = data.organizations.map(o => ({ label: o.name, value: o.totalCommits }));
     const orgSvg = generatePieChartSvg(orgData, "Commits per Organization");
     fs.writeFileSync(path.resolve(process.cwd(), "org-distribution.svg"), orgSvg);
+    console.log("📊 Generated org-distribution.svg");
 
     // 1.1 Generate Tech Radar
     const langData = Object.entries(data?.analysis?.byLanguage || {})
@@ -126,6 +133,7 @@ async function runTracker() {
 
     // 2. Generate Branch Charts for each Repo
     data.organizations.forEach(org => {
+      console.log(`🔍 Processing assets for organization: ${org.name}`);
       const orgSlug = org.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
       
       // 2.1 Generate Org-Specific Pulse
@@ -147,7 +155,7 @@ async function runTracker() {
       }
 
       // 2.3 Generate Repo Specific Branch Charts
-      org.repos.slice(0, 3).forEach(repo => {
+      org.repos.slice(0, 5).forEach(repo => {
         const safeRepoName = repo.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
         const branchSvg = generateBranchActivitySvg(repo.branches || []);
         const fileName = `branch-${orgSlug}-${safeRepoName}.svg`;
@@ -158,6 +166,7 @@ async function runTracker() {
     // 3. Build and Save Markdown
     const trackerPath = path.resolve(process.cwd(), "WORK_TRACKER.md");
     fs.writeFileSync(trackerPath, buildGlobalOverview(data));
+    console.log("📝 WORK_TRACKER.md updated");
 
     // 4. Save Org-specific MD files
     data.organizations.forEach(org => {
