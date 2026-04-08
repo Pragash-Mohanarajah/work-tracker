@@ -3,25 +3,25 @@
       <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
       <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Branch Contribution</text>
       
-      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">course-competit</text>
-      <rect x="150" y="50" width="271.70616113744074" height="20" fill="#58a6ff" rx="4" />
-      <text x="431.70616113744074" y="64" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">91 commits</text>
+      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">vercel</text>
+      <rect x="150" y="50" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="155" y="64" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">211 commits</text>
     
       <text x="20" y="96" fill="#8b949e" font-family="monospace" font-size="12">demo</text>
       <rect x="150" y="82" width="549.3838862559242" height="20" fill="#58a6ff" rx="4" />
-      <text x="709.3838862559242" y="96" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">184 commits</text>
+      <text x="155" y="96" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">184 commits</text>
     
       <text x="20" y="128" fill="#8b949e" font-family="monospace" font-size="12">develop</text>
       <rect x="150" y="114" width="519.5260663507108" height="20" fill="#58a6ff" rx="4" />
-      <text x="679.5260663507108" y="128" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">174 commits</text>
+      <text x="155" y="128" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">174 commits</text>
     
       <text x="20" y="160" fill="#8b949e" font-family="monospace" font-size="12">main</text>
       <rect x="150" y="146" width="465.781990521327" height="20" fill="#58a6ff" rx="4" />
-      <text x="625.781990521327" y="160" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">156 commits</text>
+      <text x="155" y="160" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">156 commits</text>
     
-      <text x="20" y="192" fill="#8b949e" font-family="monospace" font-size="12">vercel</text>
-      <rect x="150" y="178" width="630" height="20" fill="#58a6ff" rx="4" />
-      <text x="790" y="192" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">211 commits</text>
+      <text x="20" y="192" fill="#8b949e" font-family="monospace" font-size="12">course-competit</text>
+      <rect x="150" y="178" width="271.70616113744074" height="20" fill="#58a6ff" rx="4" />
+      <text x="155" y="192" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">91 commits</text>
     
     </svg>
   

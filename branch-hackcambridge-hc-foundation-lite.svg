@@ -3,21 +3,21 @@
       <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
       <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Branch Contribution</text>
       
-      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">clerk-auth</text>
-      <rect x="150" y="50" width="544.8648648648649" height="20" fill="#58a6ff" rx="4" />
-      <text x="704.8648648648649" y="64" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">32 commits</text>
+      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">main</text>
+      <rect x="150" y="50" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="155" y="64" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">37 commits</text>
     
-      <text x="20" y="96" fill="#8b949e" font-family="monospace" font-size="12">main</text>
+      <text x="20" y="96" fill="#8b949e" font-family="monospace" font-size="12">mongodb-auth</text>
       <rect x="150" y="82" width="630" height="20" fill="#58a6ff" rx="4" />
-      <text x="790" y="96" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">37 commits</text>
+      <text x="155" y="96" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">37 commits</text>
     
-      <text x="20" y="128" fill="#8b949e" font-family="monospace" font-size="12">mongodb-auth</text>
-      <rect x="150" y="114" width="630" height="20" fill="#58a6ff" rx="4" />
-      <text x="790" y="128" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">37 commits</text>
+      <text x="20" y="128" fill="#8b949e" font-family="monospace" font-size="12">clerk-auth</text>
+      <rect x="150" y="114" width="544.8648648648649" height="20" fill="#58a6ff" rx="4" />
+      <text x="155" y="128" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">32 commits</text>
     
       <text x="20" y="160" fill="#8b949e" font-family="monospace" font-size="12">next-auth</text>
       <rect x="150" y="146" width="527.8378378378378" height="20" fill="#58a6ff" rx="4" />
-      <text x="687.8378378378378" y="160" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">31 commits</text>
+      <text x="155" y="160" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="bold">31 commits</text>
     
     </svg>
   

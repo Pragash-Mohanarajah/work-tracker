@@ -12,7 +12,7 @@
       <rect x="140" y="60" width="35" height="180" fill="#3fb950" rx="4" />
       <text x="157.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Wed</text>
     
-      <rect x="190" y="63.47586206896551" width="35" height="176.5241379310345" fill="#3fb950" rx="4" />
+      <rect x="190" y="63.35172413793103" width="35" height="176.64827586206897" fill="#3fb950" rx="4" />
       <text x="207.5" y="260" text-anchor="middle" class="text-sub" font-size="11">Thu</text>
     
       <rect x="240" y="95.2551724137931" width="35" height="144.7448275862069" fill="#3fb950" rx="4" />

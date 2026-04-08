@@ -18,7 +18,7 @@
     
       <text x="15" y="130" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">axiafunder</text>
       <text x="15" y="144" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 17%</text>
-      <polyline points="550,130 563.6363636363636,130 577.2727272727273,130 590.9090909090909,130 604.5454545454545,130 618.1818181818182,130 631.8181818181818,130 645.4545454545455,130 659.0909090909091,130 672.7272727272727,130 686.3636363636364,115 700,122" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <polyline points="550,130 563.6363636363636,130 577.2727272727273,130 590.9090909090909,130 604.5454545454545,130 618.1818181818182,130 631.8181818181818,130 645.4545454545455,130 659.0909090909091,130 672.7272727272727,130 686.3636363636364,115 700,121.5625" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="125" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">4</text>
     
     </svg>
