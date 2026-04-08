@@ -4,24 +4,24 @@
       <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">🏆 Recent Milestones</text>
       <text x="20" y="45" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">Top repositories by contribution volume</text>
       
-      <circle cx="25" cy="56" r="3" fill="#58a6ff" />
-      <text x="40" y="60" fill="#f0f6fc" font-family="monospace" font-size="11" font-weight="500">dashboard-axiafunder</text>
+      <circle cx="30" cy="56" r="3" fill="#58a6ff" />
+      <text x="45" y="60" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">dashboard-axiafunder</text>
       <text x="375" y="60" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">1000+ commits</text>
     
-      <circle cx="25" cy="78" r="3" fill="#58a6ff" />
-      <text x="40" y="82" fill="#f0f6fc" font-family="monospace" font-size="11" font-weight="500">dashboard-axiafunder</text>
+      <circle cx="30" cy="78" r="3" fill="#58a6ff" />
+      <text x="45" y="82" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">dashboard-axiafunder</text>
       <text x="375" y="82" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">1000+ commits</text>
     
-      <circle cx="25" cy="100" r="3" fill="#58a6ff" />
-      <text x="40" y="104" fill="#f0f6fc" font-family="monospace" font-size="11" font-weight="500">exambank-ai-frontend</text>
+      <circle cx="30" cy="100" r="3" fill="#58a6ff" />
+      <text x="45" y="104" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">exambank-ai-frontend</text>
       <text x="375" y="104" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">250+ commits</text>
     
-      <circle cx="25" cy="122" r="3" fill="#58a6ff" />
-      <text x="40" y="126" fill="#f0f6fc" font-family="monospace" font-size="11" font-weight="500">portfolio</text>
+      <circle cx="30" cy="122" r="3" fill="#58a6ff" />
+      <text x="45" y="126" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">portfolio</text>
       <text x="375" y="126" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">100+ commits</text>
     
-      <circle cx="25" cy="144" r="3" fill="#58a6ff" />
-      <text x="40" y="148" fill="#f0f6fc" font-family="monospace" font-size="11" font-weight="500">flood-kg487-pm719</text>
+      <circle cx="30" cy="144" r="3" fill="#58a6ff" />
+      <text x="45" y="148" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">flood-kg487-pm719</text>
       <text x="375" y="148" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">100+ commits</text>
     
     </svg>
