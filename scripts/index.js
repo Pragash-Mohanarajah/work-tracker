@@ -126,7 +126,7 @@ async function runTracker() {
 
     // 2. Generate Branch Charts for each Repo
     data.organizations.forEach(org => {
-      const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
+      const orgSlug = org.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
       
       // 2.1 Generate Org-Specific Pulse
       const pulseSvg = generateOrgSparklinesSvg(org.repos, org.name);
@@ -148,20 +148,20 @@ async function runTracker() {
 
       // 2.3 Generate Repo Specific Branch Charts
       org.repos.slice(0, 3).forEach(repo => {
+        const safeRepoName = repo.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
         const branchSvg = generateBranchActivitySvg(repo.branches || []);
-        const fileName = `branch-${org.name}-${repo.name}.svg`;
+        const fileName = `branch-${orgSlug}-${safeRepoName}.svg`;
         fs.writeFileSync(path.resolve(process.cwd(), fileName), branchSvg);
       });
     });
 
     // 3. Build and Save Markdown
-    const overview = buildGlobalOverview(data);
     const trackerPath = path.resolve(process.cwd(), "WORK_TRACKER.md");
-    fs.writeFileSync(trackerPath, overview);
-    
-    // 4. Build and Save Org-specific MD files
+    fs.writeFileSync(trackerPath, buildGlobalOverview(data));
+
+    // 4. Save Org-specific MD files
     data.organizations.forEach(org => {
-      const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
+      const orgSlug = org.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
       const orgReport = buildOrgSection(org);
       const orgPath = path.resolve(process.cwd(), `${orgSlug}.md`);
       fs.writeFileSync(orgPath, orgReport);
