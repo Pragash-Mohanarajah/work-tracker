@@ -8,13 +8,9 @@
 
 ### 📦 Key Projects
 
-#### 📦 hc-archive
-> No description provided.
-<p align="center"><img src="./branch-hackcambridge-hc-archive.svg" width="800" alt="Branch Activity for hc-archive" /></p>
-
-#### 📦 hc-foundation
-> The Hack Cambridge Foundation Website
-<p align="center"><img src="./branch-hackcambridge-hc-foundation.svg" width="800" alt="Branch Activity for hc-foundation" /></p>
+#### 📦 hc-2020-prototype
+> Bespoke hackathon administration platform build for Hack Cambridge.
+<p align="center"><img src="./branch-hackcambridge-hc-2020-prototype.svg" width="800" alt="Branch Activity for hc-2020-prototype" /></p>
 
 #### 📦 hc-foundation-lite
 > Hack Cambridge Foundation Website Lite - Testing
@@ -24,9 +20,13 @@
 > Hack Cambridge Spyder Website 1 Temporary
 <p align="center"><img src="./branch-hackcambridge-hc-2023-spyder.svg" width="800" alt="Branch Activity for hc-2023-spyder" /></p>
 
-#### 📦 hc-2020-prototype
-> Bespoke hackathon administration platform build for Hack Cambridge.
-<p align="center"><img src="./branch-hackcambridge-hc-2020-prototype.svg" width="800" alt="Branch Activity for hc-2020-prototype" /></p>
+#### 📦 hc-foundation
+> The Hack Cambridge Foundation Website
+<p align="center"><img src="./branch-hackcambridge-hc-foundation.svg" width="800" alt="Branch Activity for hc-foundation" /></p>
+
+#### 📦 hc-archive
+> No description provided.
+<p align="center"><img src="./branch-hackcambridge-hc-archive.svg" width="800" alt="Branch Activity for hc-archive" /></p>
 
 
 ---

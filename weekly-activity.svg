@@ -12,7 +12,7 @@
       <rect x="140" y="60" width="35" height="180" fill="#3fb950" rx="4" />
       <text x="157.5" y="260" text-anchor="middle" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">Wed</text>
     
-      <rect x="190" y="65.83448275862068" width="35" height="174.16551724137932" fill="#3fb950" rx="4" />
+      <rect x="190" y="65.7103448275862" width="35" height="174.2896551724138" fill="#3fb950" rx="4" />
       <text x="207.5" y="260" text-anchor="middle" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">Thu</text>
     
       <rect x="240" y="95.2551724137931" width="35" height="144.7448275862069" fill="#3fb950" rx="4" />
