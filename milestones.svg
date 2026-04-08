@@ -18,7 +18,7 @@
     
       <circle cx="30" cy="122" r="3" fill="#58a6ff" />
       <text x="45" y="126" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">portfolio</text>
-      <text x="375" y="126" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">100+ commits</text>
+      <text x="375" y="126" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" text-anchor="end">250+ commits</text>
     
       <circle cx="30" cy="144" r="3" fill="#58a6ff" />
       <text x="45" y="148" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="500">flood-kg487-pm719</text>

@@ -1,6 +1,47 @@
 
-      <svg width="800" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
-        <text x="50%" y="50%" text-anchor="middle" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12">Branch commit breakdown not available for this project</text>
-      </svg>
+    <svg width="800" height="380" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
+      <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Branch Contribution</text>
+      
+      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">develop</text>
+      <rect x="150" y="50" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="790" y="64" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">2292 commits</text>
     
+      <text x="20" y="96" fill="#8b949e" font-family="monospace" font-size="12">develop2</text>
+      <rect x="150" y="82" width="614.3324607329843" height="20" fill="#58a6ff" rx="4" />
+      <text x="774.3324607329843" y="96" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">2235 commits</text>
+    
+      <text x="20" y="128" fill="#8b949e" font-family="monospace" font-size="12">develop4</text>
+      <rect x="150" y="114" width="141.55759162303664" height="20" fill="#58a6ff" rx="4" />
+      <text x="301.5575916230366" y="128" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">515 commits</text>
+    
+      <text x="20" y="160" fill="#8b949e" font-family="monospace" font-size="12">develop5</text>
+      <rect x="150" y="146" width="170.1439790575916" height="20" fill="#58a6ff" rx="4" />
+      <text x="330.1439790575916" y="160" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">619 commits</text>
+    
+      <text x="20" y="192" fill="#8b949e" font-family="monospace" font-size="12">develop6-merge</text>
+      <rect x="150" y="178" width="217.42146596858638" height="20" fill="#58a6ff" rx="4" />
+      <text x="377.4214659685864" y="192" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">791 commits</text>
+    
+      <text x="20" y="224" fill="#8b949e" font-family="monospace" font-size="12">develop6</text>
+      <rect x="150" y="210" width="217.14659685863873" height="20" fill="#58a6ff" rx="4" />
+      <text x="377.14659685863876" y="224" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">790 commits</text>
+    
+      <text x="20" y="256" fill="#8b949e" font-family="monospace" font-size="12">develop8</text>
+      <rect x="150" y="242" width="246.8324607329843" height="20" fill="#58a6ff" rx="4" />
+      <text x="406.83246073298426" y="256" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">898 commits</text>
+    
+      <text x="20" y="288" fill="#8b949e" font-family="monospace" font-size="12">develop9</text>
+      <rect x="150" y="274" width="267.9973821989529" height="20" fill="#58a6ff" rx="4" />
+      <text x="427.9973821989529" y="288" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">975 commits</text>
+    
+      <text x="20" y="320" fill="#8b949e" font-family="monospace" font-size="12">develop10</text>
+      <rect x="150" y="306" width="396.3612565445026" height="20" fill="#58a6ff" rx="4" />
+      <text x="556.3612565445026" y="320" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1442 commits</text>
+    
+      <text x="20" y="352" fill="#8b949e" font-family="monospace" font-size="12">develop12</text>
+      <rect x="150" y="338" width="540.9424083769634" height="20" fill="#58a6ff" rx="4" />
+      <text x="700.9424083769634" y="352" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1968 commits</text>
+    
+    </svg>
+  

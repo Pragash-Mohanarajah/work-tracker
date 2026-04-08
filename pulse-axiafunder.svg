@@ -7,19 +7,19 @@
       <text x="780" y="42" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" text-anchor="end">Total</text>
       
       <text x="15" y="70" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">dashboard-axiafunder</text>
-      <text x="15" y="84" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <text x="15" y="84" fill="#3fb950" font-family="sans-serif" font-size="9" font-weight="bold">Health: 83%</text>
       <polyline points="550,70 563.6363636363636,70 577.2727272727273,67.43589743589743 590.9090909090909,68.2051282051282 604.5454545454545,68.58974358974359 618.1818181818182,67.05128205128206 631.8181818181818,68.07692307692308 645.4545454545455,55 659.0909090909091,67.3076923076923 672.7272727272727,67.94871794871794 686.3636363636364,58.205128205128204 700,66.28205128205128" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="65" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">1958</text>
     
       <text x="15" y="100" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">landing-axiafunder</text>
-      <text x="15" y="114" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
+      <text x="15" y="114" fill="#f0883e" font-family="sans-serif" font-size="9" font-weight="bold">Health: 50%</text>
       <polyline points="550,88.75 563.6363636363636,100 577.2727272727273,96.25 590.9090909090909,85 604.5454545454545,100 618.1818181818182,100 631.8181818181818,100 645.4545454545455,96.25 659.0909090909091,100 672.7272727272727,92.5 686.3636363636364,92.5 700,100" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <text x="780" y="95" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">104</text>
     
       <text x="15" y="130" fill="#f0f6fc" font-family="monospace" font-size="12" font-weight="600">axiafunder</text>
-      <text x="15" y="144" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 0%</text>
-      <polyline points="550,130 563.6363636363636,130 577.2727272727273,130 590.9090909090909,130 604.5454545454545,130 618.1818181818182,130 631.8181818181818,130 645.4545454545455,130 659.0909090909091,130 672.7272727272727,130 686.3636363636364,115 700,130" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="780" y="125" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">1</text>
+      <text x="15" y="144" fill="#ff7b72" font-family="sans-serif" font-size="9" font-weight="bold">Health: 17%</text>
+      <polyline points="550,130 563.6363636363636,130 577.2727272727273,130 590.9090909090909,130 604.5454545454545,130 618.1818181818182,130 631.8181818181818,130 645.4545454545455,130 659.0909090909091,130 672.7272727272727,130 686.3636363636364,115 700,123.75" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="780" y="125" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9" text-anchor="end">4</text>
     
     </svg>
   

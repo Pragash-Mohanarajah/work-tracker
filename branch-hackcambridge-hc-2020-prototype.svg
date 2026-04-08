@@ -1,6 +1,47 @@
 
-      <svg width="800" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
-        <text x="50%" y="50%" text-anchor="middle" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="12">Branch commit breakdown not available for this project</text>
-      </svg>
+    <svg width="800" height="380" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0d1117" stroke="#30363d" rx="10" />
+      <text x="20" y="30" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="bold">Branch Contribution</text>
+      
+      <text x="20" y="64" fill="#8b949e" font-family="monospace" font-size="12">Text_descriptio</text>
+      <rect x="150" y="50" width="102.23449447748513" height="20" fill="#58a6ff" rx="4" />
+      <text x="262.2344944774851" y="64" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">191 commits</text>
     
+      <text x="20" y="96" fill="#8b949e" font-family="monospace" font-size="12">carlos/auth0-ap</text>
+      <rect x="150" y="82" width="97.41716227697536" height="20" fill="#58a6ff" rx="4" />
+      <text x="257.4171622769754" y="96" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">182 commits</text>
+    
+      <text x="20" y="128" fill="#8b949e" font-family="monospace" font-size="12">dependabot/comp</text>
+      <rect x="150" y="114" width="601.6312659303313" height="20" fill="#58a6ff" rx="4" />
+      <text x="761.6312659303313" y="128" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1124 commits</text>
+    
+      <text x="20" y="160" fill="#8b949e" font-family="monospace" font-size="12">dependabot/comp</text>
+      <rect x="150" y="146" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="790" y="160" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1177 commits</text>
+    
+      <text x="20" y="192" fill="#8b949e" font-family="monospace" font-size="12">dependabot/comp</text>
+      <rect x="150" y="178" width="601.6312659303313" height="20" fill="#58a6ff" rx="4" />
+      <text x="761.6312659303313" y="192" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1124 commits</text>
+    
+      <text x="20" y="224" fill="#8b949e" font-family="monospace" font-size="12">dependabot/comp</text>
+      <rect x="150" y="210" width="610.195412064571" height="20" fill="#58a6ff" rx="4" />
+      <text x="770.195412064571" y="224" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1140 commits</text>
+    
+      <text x="20" y="256" fill="#8b949e" font-family="monospace" font-size="12">dependabot/npm_</text>
+      <rect x="150" y="242" width="618.2242990654206" height="20" fill="#58a6ff" rx="4" />
+      <text x="778.2242990654206" y="256" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1155 commits</text>
+    
+      <text x="20" y="288" fill="#8b949e" font-family="monospace" font-size="12">dependabot/npm_</text>
+      <rect x="150" y="274" width="618.2242990654206" height="20" fill="#58a6ff" rx="4" />
+      <text x="778.2242990654206" y="288" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1155 commits</text>
+    
+      <text x="20" y="320" fill="#8b949e" font-family="monospace" font-size="12">dependabot/npm_</text>
+      <rect x="150" y="306" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="790" y="320" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1177 commits</text>
+    
+      <text x="20" y="352" fill="#8b949e" font-family="monospace" font-size="12">deploy</text>
+      <rect x="150" y="338" width="630" height="20" fill="#58a6ff" rx="4" />
+      <text x="790" y="352" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">1177 commits</text>
+    
+    </svg>
+  
