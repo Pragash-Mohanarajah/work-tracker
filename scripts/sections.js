@@ -1,6 +1,4 @@
-function buildWorkTrackerSection(data) {
-  const organizations = data?.organizations || [];
-
+function buildGlobalOverview(data) {
   let markdown = [
     "## 🏢 Work & Organizational Tracker",
     '<p align="center">',
@@ -37,36 +35,37 @@ function buildWorkTrackerSection(data) {
     markdown.push('<p align="center"><img src="./top-contributors.svg" width="395" alt="Top Contributors" /></p>', "");
   }
   
-  markdown.push("---");
+  return markdown.join("\n");
+}
 
-  organizations.forEach(org => {
-    const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
-    markdown.push(`#### 🏛️ ${org.name}`);
-    markdown.push(`- **Total Repositories:** ${org.repos.length}`);
-    markdown.push(`- **Primary Stack:** ${org.topLanguages.join(", ")}`);
-    markdown.push("");
+function buildOrgSection(org) {
+  const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
+  let markdown = [
+    `# 🏛️ ${org.name} Contribution Report`,
+    `- **Total Repositories:** ${org.repos.length}`,
+    `- **Primary Stack:** ${org.topLanguages.join(", ")}`,
+    "",
+    `<img src="./lang-bar-${orgSlug}.svg" width="800" alt="${org.name} Tech Mix" />`,
+    `<p align="center">`,
+    `  <img src="./pulse-${orgSlug}.svg" width="800" alt="${org.name} Repository Pulse" />`,
+    `</p>`,
+    `<p align="center">`,
+    `  <img src="./radar-${orgSlug}.svg" width="395" alt="${org.name} Stack Radar" />`,
+    `</p>`,
+    "",
+    "### 📦 Key Projects",
+    ""
+  ];
 
-    markdown.push(`<img src="./lang-bar-${orgSlug}.svg" width="800" alt="${org.name} Tech Mix" />`);
-    markdown.push(`<p align="center">`);
-    markdown.push(`  <img src="./pulse-${orgSlug}.svg" width="800" alt="${org.name} Repository Pulse" />`);
-    markdown.push(`</p>`);
-    markdown.push(`<p align="center">`);
-    markdown.push(`  <img src="./radar-${orgSlug}.svg" width="395" alt="${org.name} Stack Radar" />`);
-    markdown.push(`</p>`);
+  org.repos.slice(0, 5).forEach(repo => {
+    markdown.push(`#### 📦 ${repo.name}`);
+    markdown.push(`> ${repo.description || "No description provided."}`);
+    const branchFileName = `branch-${org.name}-${repo.name}.svg`;
+    markdown.push(`<p align="center"><img src="./${branchFileName}" width="800" alt="Branch Activity for ${repo.name}" /></p>`);
     markdown.push("");
-    
-    org.repos.slice(0, 3).forEach(repo => {
-      markdown.push(`##### 📦 ${repo.name}`);
-      markdown.push(`> ${repo.description || "No description provided."}`);
-      const branchFileName = `branch-${org.name}-${repo.name}.svg`;
-      markdown.push(`<p align="center"><img src="./${branchFileName}" width="800" alt="Branch Activity for ${repo.name}" /></p>`);
-      markdown.push("");
-    });
-    
-    markdown.push("---");
   });
 
   return markdown.join("\n");
 }
 
-module.exports = { buildWorkTrackerSection };
+module.exports = { buildGlobalOverview, buildOrgSection };

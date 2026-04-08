@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { fetchStats } = require("./fetchStats");
-const { buildWorkTrackerSection } = require("./sections");
+const { buildGlobalOverview, buildOrgSection } = require("./sections");
 const {
   generatePieChartSvg,
   generateBranchActivitySvg,
@@ -155,11 +155,18 @@ async function runTracker() {
     });
 
     // 3. Build and Save Markdown
-    const section = buildWorkTrackerSection(data);
-    
-    // If you want to save to a specific WORK_TRACKER.md instead of README
+    const overview = buildGlobalOverview(data);
     const trackerPath = path.resolve(process.cwd(), "WORK_TRACKER.md");
-    fs.writeFileSync(trackerPath, section);
+    fs.writeFileSync(trackerPath, overview);
+    
+    // 4. Build and Save Org-specific MD files
+    data.organizations.forEach(org => {
+      const orgSlug = org.name.toLowerCase().replace(/\s/g, '-');
+      const orgReport = buildOrgSection(org);
+      const orgPath = path.resolve(process.cwd(), `${orgSlug}.md`);
+      fs.writeFileSync(orgPath, orgReport);
+      console.log(`📑 Generated report for ${org.name} at ${orgSlug}.md`);
+    });
     
     console.log("✅ Work Tracker finalized successfully!");
   } catch (err) {
