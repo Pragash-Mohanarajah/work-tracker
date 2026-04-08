@@ -61,11 +61,12 @@ async function fetchStats() {
   // 3. Save Final Stats
   // eslint-disable-next-line no-console
   console.log("Saving aggregated stats...")
-  await fetchWithRetry(`${url}?mode=save`, {
+  const finalRes = await fetchWithRetry(`${url}?mode=save`, {
     method: "POST",
     headers,
     body: JSON.stringify(currentData),
   })
+  currentData = await finalRes.json()
 
   return currentData
 }
