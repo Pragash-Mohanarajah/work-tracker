@@ -30,7 +30,7 @@ Detailed breakdown of contributions across professional and personal entities.
 ---
 ### 🏛️ Organization Reports
 Explore detailed metrics for each organization:
-- **Pragash-Mohanarajah** — _59 repositories_
+- **Pragash-Mohanarajah** — _60 repositories_
 - **AxiaFunder** — _3 repositories_
 - **IB-Integrated-Design-Project-Group-M202** — _2 repositories_
 - **hackcambridge** — _17 repositories_
